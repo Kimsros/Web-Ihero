@@ -20,9 +20,9 @@
                     <li><a :href="'/'">Home</a>
                     <li><a :href="'/restuarant'">Restaurant</a>
                     </li>
-                    <li><a href="about.html">About us</a></li>
+                    <li><a :href="'/about_us'">About us</a></li>
 
-                    <li><a href="#0" data-toggle="modal" data-target="#login_2">Login</a></li>
+                    <li><a :href="'/login'">Login</a></li>
                 </ul>
             </div><!-- End main-menu -->
             </nav>

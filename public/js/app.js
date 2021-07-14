@@ -1883,8 +1883,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Include_Navbar_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Include/Navbar.vue */ "./resources/js/Frontend/Include/Navbar.vue");
 /* harmony import */ var _Include_SubHeader_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Include/SubHeader.vue */ "./resources/js/Frontend/Include/SubHeader.vue");
-/* harmony import */ var _Include_HowWork_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Include/HowWork.vue */ "./resources/js/Frontend/Include/HowWork.vue");
-/* harmony import */ var _Include_Footer_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Include/Footer.vue */ "./resources/js/Frontend/Include/Footer.vue");
+/* harmony import */ var _Include_Footer_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Include/Footer.vue */ "./resources/js/Frontend/Include/Footer.vue");
+/* harmony import */ var _Include_SubHeaderRestuarant_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Include/SubHeaderRestuarant.vue */ "./resources/js/Frontend/Include/SubHeaderRestuarant.vue");
+/* harmony import */ var _Include_HeaderRestuarantDetail_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Include/HeaderRestuarantDetail.vue */ "./resources/js/Frontend/Include/HeaderRestuarantDetail.vue");
 //
 //
 //
@@ -1895,17 +1896,83 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+
 
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      data: null
+    };
+  },
   name: "App",
   components: {
     Navbar: _Include_Navbar_vue__WEBPACK_IMPORTED_MODULE_0__.default,
-    SubHeader: _Include_SubHeader_vue__WEBPACK_IMPORTED_MODULE_1__.default,
-    HowItWork: _Include_HowWork_vue__WEBPACK_IMPORTED_MODULE_2__.default,
-    Footer: _Include_Footer_vue__WEBPACK_IMPORTED_MODULE_3__.default
+    SubHeaderHome: _Include_SubHeader_vue__WEBPACK_IMPORTED_MODULE_1__.default,
+    SubHeaderRestuarant: _Include_SubHeaderRestuarant_vue__WEBPACK_IMPORTED_MODULE_3__.default,
+    HeaderRestuarantDetail: _Include_HeaderRestuarantDetail_vue__WEBPACK_IMPORTED_MODULE_4__.default,
+    Footer: _Include_Footer_vue__WEBPACK_IMPORTED_MODULE_2__.default
+  },
+  mounted: function mounted() {
+    console.log(this.$router.currentRoute.path);
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/HomeFront/View/Login.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/HomeFront/View/Login.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      email: null,
+      password: null,
+      role: null
+    };
+  },
+  methods: {
+    login: function login() {
+      var data = ['Admin', 'Customer', 'Vender', 'Staff', 'Delivery'];
+      this.role = data[Math.floor(Math.random() * data.length)];
+      this.role = 'Vender';
+
+      if (this.role == 'Admin') {
+        window.location.href = '/admin';
+      } else if (this.role == 'Customer') {} else if (this.role == 'Vender') {
+        window.location.href = '/vender';
+      } else if (this.role == 'Staff') {} else if (this.role == 'Delivery') {} else {
+        window.location.href = '/';
+      }
+    }
   }
 });
 
@@ -1963,6 +2030,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Product_router_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Product/router.js */ "./resources/js/Backend/Product/router.js");
 /* harmony import */ var _Report_router_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Report/router.js */ "./resources/js/Backend/Report/router.js");
 /* harmony import */ var _User_router_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./User/router.js */ "./resources/js/Backend/User/router.js");
+/* harmony import */ var _Dashboard_router_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Dashboard/router.js */ "./resources/js/Backend/Dashboard/router.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -1981,9 +2049,32 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
 
-var routes = [].concat(_toConsumableArray(_DeliveryConfig_router_js__WEBPACK_IMPORTED_MODULE_0__.default.router), _toConsumableArray(_Menu_router_js__WEBPACK_IMPORTED_MODULE_1__.default.router), _toConsumableArray(_Order_router_js__WEBPACK_IMPORTED_MODULE_2__.default.router), _toConsumableArray(_Product_router_js__WEBPACK_IMPORTED_MODULE_3__.default.router), _toConsumableArray(_Report_router_js__WEBPACK_IMPORTED_MODULE_4__.default.router), _toConsumableArray(_User_router_js__WEBPACK_IMPORTED_MODULE_5__.default.router));
+
+var routes = [].concat(_toConsumableArray(_DeliveryConfig_router_js__WEBPACK_IMPORTED_MODULE_0__.default.router), _toConsumableArray(_Menu_router_js__WEBPACK_IMPORTED_MODULE_1__.default.router), _toConsumableArray(_Order_router_js__WEBPACK_IMPORTED_MODULE_2__.default.router), _toConsumableArray(_Product_router_js__WEBPACK_IMPORTED_MODULE_3__.default.router), _toConsumableArray(_Report_router_js__WEBPACK_IMPORTED_MODULE_4__.default.router), _toConsumableArray(_User_router_js__WEBPACK_IMPORTED_MODULE_5__.default.router), _toConsumableArray(_Dashboard_router_js__WEBPACK_IMPORTED_MODULE_6__.default.router));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   router: routes
+});
+
+/***/ }),
+
+/***/ "./resources/js/Backend/Dashboard/router.js":
+/*!**************************************************!*\
+  !*** ./resources/js/Backend/Dashboard/router.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _View_view_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./View/view.vue */ "./resources/js/Backend/Dashboard/View/view.vue");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  router: [{
+    path: "/admin",
+    component: _View_view_vue__WEBPACK_IMPORTED_MODULE_0__.default
+  }]
 });
 
 /***/ }),
@@ -2247,7 +2338,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   router: [{
-    path: "/",
+    path: "/customer_view",
     component: _View_View_vue__WEBPACK_IMPORTED_MODULE_0__.default
   }]
 });
@@ -2325,6 +2416,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Staff_StaffRouter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Staff/StaffRouter */ "./resources/js/Frontend/Staff/StaffRouter.js");
 /* harmony import */ var _Vender_VenderRouter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Vender/VenderRouter */ "./resources/js/Frontend/Vender/VenderRouter.js");
 /* harmony import */ var _Delivery_DeliveryRouter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Delivery/DeliveryRouter */ "./resources/js/Frontend/Delivery/DeliveryRouter.js");
+/* harmony import */ var _HomeFront_RouterHomeFront__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./HomeFront/RouterHomeFront */ "./resources/js/Frontend/HomeFront/RouterHomeFront.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -2341,9 +2433,94 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
 
-var routes = [].concat(_toConsumableArray(_Customer_CustomerRouter__WEBPACK_IMPORTED_MODULE_0__.default.router), _toConsumableArray(_Staff_StaffRouter__WEBPACK_IMPORTED_MODULE_1__.default.router), _toConsumableArray(_Vender_VenderRouter__WEBPACK_IMPORTED_MODULE_2__.default.router), _toConsumableArray(_Delivery_DeliveryRouter__WEBPACK_IMPORTED_MODULE_3__.default.router));
+
+var routes = [].concat(_toConsumableArray(_Customer_CustomerRouter__WEBPACK_IMPORTED_MODULE_0__.default.router), _toConsumableArray(_Staff_StaffRouter__WEBPACK_IMPORTED_MODULE_1__.default.router), _toConsumableArray(_Vender_VenderRouter__WEBPACK_IMPORTED_MODULE_2__.default.router), _toConsumableArray(_Delivery_DeliveryRouter__WEBPACK_IMPORTED_MODULE_3__.default.router), _toConsumableArray(_HomeFront_RouterHomeFront__WEBPACK_IMPORTED_MODULE_4__.default.router));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   router: routes
+});
+
+/***/ }),
+
+/***/ "./resources/js/Frontend/HomeFront/RouterHomeFront.js":
+/*!************************************************************!*\
+  !*** ./resources/js/Frontend/HomeFront/RouterHomeFront.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./router */ "./resources/js/Frontend/HomeFront/router.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+
+
+var routes = _toConsumableArray(_router__WEBPACK_IMPORTED_MODULE_0__.default.router);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  router: routes
+});
+
+/***/ }),
+
+/***/ "./resources/js/Frontend/HomeFront/router.js":
+/*!***************************************************!*\
+  !*** ./resources/js/Frontend/HomeFront/router.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _View_index_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./View/index.vue */ "./resources/js/Frontend/HomeFront/View/index.vue");
+/* harmony import */ var _View_Restuarant_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./View/Restuarant.vue */ "./resources/js/Frontend/HomeFront/View/Restuarant.vue");
+/* harmony import */ var _View_MenuRestuarant_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./View/MenuRestuarant.vue */ "./resources/js/Frontend/HomeFront/View/MenuRestuarant.vue");
+/* harmony import */ var _View_AboutUs_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./View/AboutUs.vue */ "./resources/js/Frontend/HomeFront/View/AboutUs.vue");
+/* harmony import */ var _View_Login_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./View/Login.vue */ "./resources/js/Frontend/HomeFront/View/Login.vue");
+/* harmony import */ var _View_Register_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./View/Register.vue */ "./resources/js/Frontend/HomeFront/View/Register.vue");
+
+
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  router: [{
+    path: "/",
+    component: _View_index_vue__WEBPACK_IMPORTED_MODULE_0__.default,
+    name: 'home'
+  }, {
+    path: "/restuarant",
+    component: _View_Restuarant_vue__WEBPACK_IMPORTED_MODULE_1__.default,
+    name: 'restuarant'
+  }, {
+    path: "/restuarant/detail",
+    component: _View_MenuRestuarant_vue__WEBPACK_IMPORTED_MODULE_2__.default,
+    name: 'restuarant_detail'
+  }, {
+    path: "/about_us",
+    component: _View_AboutUs_vue__WEBPACK_IMPORTED_MODULE_3__.default
+  }, {
+    path: "/login",
+    component: _View_Login_vue__WEBPACK_IMPORTED_MODULE_4__.default
+  }, {
+    path: "/register",
+    component: _View_Register_vue__WEBPACK_IMPORTED_MODULE_5__.default
+  }]
 });
 
 /***/ }),
@@ -2450,6 +2627,28 @@ var routes = [].concat(_toConsumableArray(_Order_router__WEBPACK_IMPORTED_MODULE
 
 /***/ }),
 
+/***/ "./resources/js/Frontend/Vender/Dashboard/router.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/Frontend/Vender/Dashboard/router.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _View_view_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./View/view.vue */ "./resources/js/Frontend/Vender/Dashboard/View/view.vue");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  router: [{
+    path: "/vender",
+    component: _View_view_vue__WEBPACK_IMPORTED_MODULE_0__.default
+  }]
+});
+
+/***/ }),
+
 /***/ "./resources/js/Frontend/Vender/DeliveryConfig/router.js":
 /*!***************************************************************!*\
   !*** ./resources/js/Frontend/Vender/DeliveryConfig/router.js ***!
@@ -2465,7 +2664,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   router: [{
-    path: "/admin/deliveryconfiguration",
+    path: "/vender/deliveryconfiguration",
     component: _View_View_vue__WEBPACK_IMPORTED_MODULE_0__.default
   }]
 });
@@ -2487,7 +2686,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   router: [{
-    path: "/admin/deliveryconfiguration",
+    path: "/vander/delivery",
     component: _View_View_vue__WEBPACK_IMPORTED_MODULE_0__.default
   }]
 });
@@ -2509,7 +2708,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   router: [{
-    path: "/admin/deliveryconfiguration",
+    path: "/vender/menu",
     component: _View_View_vue__WEBPACK_IMPORTED_MODULE_0__.default
   }]
 });
@@ -2531,7 +2730,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   router: [{
-    path: "/admin/deliveryconfiguration",
+    path: "/vender/order",
     component: _View_View_vue__WEBPACK_IMPORTED_MODULE_0__.default
   }]
 });
@@ -2553,7 +2752,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   router: [{
-    path: "/admin/deliveryconfiguration",
+    path: "/vender/payment",
     component: _View_View_vue__WEBPACK_IMPORTED_MODULE_0__.default
   }]
 });
@@ -2575,7 +2774,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   router: [{
-    path: "/admin/deliveryconfiguration",
+    path: "/vender/product",
     component: _View_View_vue__WEBPACK_IMPORTED_MODULE_0__.default
   }]
 });
@@ -2597,7 +2796,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   router: [{
-    path: "/vender_report",
+    path: "/vender/report",
     component: _View_View_vue__WEBPACK_IMPORTED_MODULE_0__.default
   }]
 });
@@ -2619,7 +2818,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   router: [{
-    path: "/admin/deliveryconfiguration",
+    path: "/vender/staff",
     component: _View_View_vue__WEBPACK_IMPORTED_MODULE_0__.default
   }]
 });
@@ -2645,6 +2844,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Product_router_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Product/router.js */ "./resources/js/Frontend/Vender/Product/router.js");
 /* harmony import */ var _Report_router_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Report/router.js */ "./resources/js/Frontend/Vender/Report/router.js");
 /* harmony import */ var _Staff_router_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Staff/router.js */ "./resources/js/Frontend/Vender/Staff/router.js");
+/* harmony import */ var _Dashboard_router_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Dashboard/router.js */ "./resources/js/Frontend/Vender/Dashboard/router.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -2665,7 +2865,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
 
-var routes = [].concat(_toConsumableArray(_DeliveryConfig_router_js__WEBPACK_IMPORTED_MODULE_1__.default.router), _toConsumableArray(_Delivery_router__WEBPACK_IMPORTED_MODULE_0__.default.router), _toConsumableArray(_Menu_router_js__WEBPACK_IMPORTED_MODULE_2__.default.router), _toConsumableArray(_Order_router_js__WEBPACK_IMPORTED_MODULE_3__.default.router), _toConsumableArray(_Payment_router_js__WEBPACK_IMPORTED_MODULE_4__.default.router), _toConsumableArray(_Product_router_js__WEBPACK_IMPORTED_MODULE_5__.default.router), _toConsumableArray(_Report_router_js__WEBPACK_IMPORTED_MODULE_6__.default.router), _toConsumableArray(_Staff_router_js__WEBPACK_IMPORTED_MODULE_7__.default.router));
+
+var routes = [].concat(_toConsumableArray(_DeliveryConfig_router_js__WEBPACK_IMPORTED_MODULE_1__.default.router), _toConsumableArray(_Delivery_router__WEBPACK_IMPORTED_MODULE_0__.default.router), _toConsumableArray(_Menu_router_js__WEBPACK_IMPORTED_MODULE_2__.default.router), _toConsumableArray(_Order_router_js__WEBPACK_IMPORTED_MODULE_3__.default.router), _toConsumableArray(_Payment_router_js__WEBPACK_IMPORTED_MODULE_4__.default.router), _toConsumableArray(_Product_router_js__WEBPACK_IMPORTED_MODULE_5__.default.router), _toConsumableArray(_Report_router_js__WEBPACK_IMPORTED_MODULE_6__.default.router), _toConsumableArray(_Staff_router_js__WEBPACK_IMPORTED_MODULE_7__.default.router), _toConsumableArray(_Dashboard_router_js__WEBPACK_IMPORTED_MODULE_8__.default.router));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   router: routes
 });
@@ -39220,6 +39421,43 @@ component.options.__file = "resources/js/Backend/App.vue"
 
 /***/ }),
 
+/***/ "./resources/js/Backend/Dashboard/View/view.vue":
+/*!******************************************************!*\
+  !*** ./resources/js/Backend/Dashboard/View/view.vue ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _view_vue_vue_type_template_id_15e8362b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./view.vue?vue&type=template&id=15e8362b& */ "./resources/js/Backend/Dashboard/View/view.vue?vue&type=template&id=15e8362b&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__.default)(
+  script,
+  _view_vue_vue_type_template_id_15e8362b___WEBPACK_IMPORTED_MODULE_0__.render,
+  _view_vue_vue_type_template_id_15e8362b___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Backend/Dashboard/View/view.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/Backend/DeliveryConfig/View/View.vue":
 /*!***********************************************************!*\
   !*** ./resources/js/Backend/DeliveryConfig/View/View.vue ***!
@@ -39608,6 +39846,230 @@ component.options.__file = "resources/js/Frontend/Delivery/View/View.vue"
 
 /***/ }),
 
+/***/ "./resources/js/Frontend/HomeFront/View/AboutUs.vue":
+/*!**********************************************************!*\
+  !*** ./resources/js/Frontend/HomeFront/View/AboutUs.vue ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _AboutUs_vue_vue_type_template_id_000ec615___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AboutUs.vue?vue&type=template&id=000ec615& */ "./resources/js/Frontend/HomeFront/View/AboutUs.vue?vue&type=template&id=000ec615&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__.default)(
+  script,
+  _AboutUs_vue_vue_type_template_id_000ec615___WEBPACK_IMPORTED_MODULE_0__.render,
+  _AboutUs_vue_vue_type_template_id_000ec615___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Frontend/HomeFront/View/AboutUs.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Frontend/HomeFront/View/Login.vue":
+/*!********************************************************!*\
+  !*** ./resources/js/Frontend/HomeFront/View/Login.vue ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Login_vue_vue_type_template_id_623eabf3___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Login.vue?vue&type=template&id=623eabf3& */ "./resources/js/Frontend/HomeFront/View/Login.vue?vue&type=template&id=623eabf3&");
+/* harmony import */ var _Login_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Login.vue?vue&type=script&lang=js& */ "./resources/js/Frontend/HomeFront/View/Login.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _Login_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _Login_vue_vue_type_template_id_623eabf3___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Login_vue_vue_type_template_id_623eabf3___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Frontend/HomeFront/View/Login.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Frontend/HomeFront/View/MenuRestuarant.vue":
+/*!*****************************************************************!*\
+  !*** ./resources/js/Frontend/HomeFront/View/MenuRestuarant.vue ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _MenuRestuarant_vue_vue_type_template_id_d9c3ea8c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MenuRestuarant.vue?vue&type=template&id=d9c3ea8c& */ "./resources/js/Frontend/HomeFront/View/MenuRestuarant.vue?vue&type=template&id=d9c3ea8c&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__.default)(
+  script,
+  _MenuRestuarant_vue_vue_type_template_id_d9c3ea8c___WEBPACK_IMPORTED_MODULE_0__.render,
+  _MenuRestuarant_vue_vue_type_template_id_d9c3ea8c___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Frontend/HomeFront/View/MenuRestuarant.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Frontend/HomeFront/View/Register.vue":
+/*!***********************************************************!*\
+  !*** ./resources/js/Frontend/HomeFront/View/Register.vue ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Register_vue_vue_type_template_id_cd05f7ee___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Register.vue?vue&type=template&id=cd05f7ee& */ "./resources/js/Frontend/HomeFront/View/Register.vue?vue&type=template&id=cd05f7ee&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__.default)(
+  script,
+  _Register_vue_vue_type_template_id_cd05f7ee___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Register_vue_vue_type_template_id_cd05f7ee___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Frontend/HomeFront/View/Register.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Frontend/HomeFront/View/Restuarant.vue":
+/*!*************************************************************!*\
+  !*** ./resources/js/Frontend/HomeFront/View/Restuarant.vue ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Restuarant_vue_vue_type_template_id_0811927b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Restuarant.vue?vue&type=template&id=0811927b& */ "./resources/js/Frontend/HomeFront/View/Restuarant.vue?vue&type=template&id=0811927b&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__.default)(
+  script,
+  _Restuarant_vue_vue_type_template_id_0811927b___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Restuarant_vue_vue_type_template_id_0811927b___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Frontend/HomeFront/View/Restuarant.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Frontend/HomeFront/View/index.vue":
+/*!********************************************************!*\
+  !*** ./resources/js/Frontend/HomeFront/View/index.vue ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _index_vue_vue_type_template_id_2124e8fc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.vue?vue&type=template&id=2124e8fc& */ "./resources/js/Frontend/HomeFront/View/index.vue?vue&type=template&id=2124e8fc&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__.default)(
+  script,
+  _index_vue_vue_type_template_id_2124e8fc___WEBPACK_IMPORTED_MODULE_0__.render,
+  _index_vue_vue_type_template_id_2124e8fc___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Frontend/HomeFront/View/index.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/Frontend/Include/Footer.vue":
 /*!**************************************************!*\
   !*** ./resources/js/Frontend/Include/Footer.vue ***!
@@ -39645,10 +40107,10 @@ component.options.__file = "resources/js/Frontend/Include/Footer.vue"
 
 /***/ }),
 
-/***/ "./resources/js/Frontend/Include/HowWork.vue":
-/*!***************************************************!*\
-  !*** ./resources/js/Frontend/Include/HowWork.vue ***!
-  \***************************************************/
+/***/ "./resources/js/Frontend/Include/HeaderRestuarantDetail.vue":
+/*!******************************************************************!*\
+  !*** ./resources/js/Frontend/Include/HeaderRestuarantDetail.vue ***!
+  \******************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -39656,7 +40118,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _HowWork_vue_vue_type_template_id_0e3052fb___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HowWork.vue?vue&type=template&id=0e3052fb& */ "./resources/js/Frontend/Include/HowWork.vue?vue&type=template&id=0e3052fb&");
+/* harmony import */ var _HeaderRestuarantDetail_vue_vue_type_template_id_6b363e69___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HeaderRestuarantDetail.vue?vue&type=template&id=6b363e69& */ "./resources/js/Frontend/Include/HeaderRestuarantDetail.vue?vue&type=template&id=6b363e69&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 var script = {}
@@ -39666,8 +40128,8 @@ var script = {}
 ;
 var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__.default)(
   script,
-  _HowWork_vue_vue_type_template_id_0e3052fb___WEBPACK_IMPORTED_MODULE_0__.render,
-  _HowWork_vue_vue_type_template_id_0e3052fb___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  _HeaderRestuarantDetail_vue_vue_type_template_id_6b363e69___WEBPACK_IMPORTED_MODULE_0__.render,
+  _HeaderRestuarantDetail_vue_vue_type_template_id_6b363e69___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
   null,
   null,
@@ -39677,7 +40139,7 @@ var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/Frontend/Include/HowWork.vue"
+component.options.__file = "resources/js/Frontend/Include/HeaderRestuarantDetail.vue"
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
 
 /***/ }),
@@ -39752,6 +40214,43 @@ var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__
 /* hot reload */
 if (false) { var api; }
 component.options.__file = "resources/js/Frontend/Include/SubHeader.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Frontend/Include/SubHeaderRestuarant.vue":
+/*!***************************************************************!*\
+  !*** ./resources/js/Frontend/Include/SubHeaderRestuarant.vue ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _SubHeaderRestuarant_vue_vue_type_template_id_f19f3348___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SubHeaderRestuarant.vue?vue&type=template&id=f19f3348& */ "./resources/js/Frontend/Include/SubHeaderRestuarant.vue?vue&type=template&id=f19f3348&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__.default)(
+  script,
+  _SubHeaderRestuarant_vue_vue_type_template_id_f19f3348___WEBPACK_IMPORTED_MODULE_0__.render,
+  _SubHeaderRestuarant_vue_vue_type_template_id_f19f3348___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Frontend/Include/SubHeaderRestuarant.vue"
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
 
 /***/ }),
@@ -39854,6 +40353,43 @@ var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__
 )
 
 component.options.__file = "resources/js/Frontend/Staff/Report/View/View.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Frontend/Vender/Dashboard/View/view.vue":
+/*!**************************************************************!*\
+  !*** ./resources/js/Frontend/Vender/Dashboard/View/view.vue ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _view_vue_vue_type_template_id_d4074134___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./view.vue?vue&type=template&id=d4074134& */ "./resources/js/Frontend/Vender/Dashboard/View/view.vue?vue&type=template&id=d4074134&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__.default)(
+  script,
+  _view_vue_vue_type_template_id_d4074134___WEBPACK_IMPORTED_MODULE_0__.render,
+  _view_vue_vue_type_template_id_d4074134___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Frontend/Vender/Dashboard/View/view.vue"
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
 
 /***/ }),
@@ -40201,6 +40737,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Frontend/HomeFront/View/Login.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/Frontend/HomeFront/View/Login.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Login.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/HomeFront/View/Login.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
 /***/ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************!*\
   !*** ./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
@@ -40230,6 +40782,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_template_id_b8a5cc50___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_template_id_b8a5cc50___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./App.vue?vue&type=template&id=b8a5cc50& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Backend/App.vue?vue&type=template&id=b8a5cc50&");
+
+
+/***/ }),
+
+/***/ "./resources/js/Backend/Dashboard/View/view.vue?vue&type=template&id=15e8362b&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/Backend/Dashboard/View/view.vue?vue&type=template&id=15e8362b& ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_view_vue_vue_type_template_id_15e8362b___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_view_vue_vue_type_template_id_15e8362b___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_view_vue_vue_type_template_id_15e8362b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./view.vue?vue&type=template&id=15e8362b& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Backend/Dashboard/View/view.vue?vue&type=template&id=15e8362b&");
 
 
 /***/ }),
@@ -40302,6 +40871,108 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Frontend/HomeFront/View/AboutUs.vue?vue&type=template&id=000ec615&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/Frontend/HomeFront/View/AboutUs.vue?vue&type=template&id=000ec615& ***!
+  \*****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AboutUs_vue_vue_type_template_id_000ec615___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AboutUs_vue_vue_type_template_id_000ec615___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AboutUs_vue_vue_type_template_id_000ec615___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./AboutUs.vue?vue&type=template&id=000ec615& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/HomeFront/View/AboutUs.vue?vue&type=template&id=000ec615&");
+
+
+/***/ }),
+
+/***/ "./resources/js/Frontend/HomeFront/View/Login.vue?vue&type=template&id=623eabf3&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/Frontend/HomeFront/View/Login.vue?vue&type=template&id=623eabf3& ***!
+  \***************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_template_id_623eabf3___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_template_id_623eabf3___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_template_id_623eabf3___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Login.vue?vue&type=template&id=623eabf3& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/HomeFront/View/Login.vue?vue&type=template&id=623eabf3&");
+
+
+/***/ }),
+
+/***/ "./resources/js/Frontend/HomeFront/View/MenuRestuarant.vue?vue&type=template&id=d9c3ea8c&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/Frontend/HomeFront/View/MenuRestuarant.vue?vue&type=template&id=d9c3ea8c& ***!
+  \************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MenuRestuarant_vue_vue_type_template_id_d9c3ea8c___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MenuRestuarant_vue_vue_type_template_id_d9c3ea8c___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MenuRestuarant_vue_vue_type_template_id_d9c3ea8c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./MenuRestuarant.vue?vue&type=template&id=d9c3ea8c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/HomeFront/View/MenuRestuarant.vue?vue&type=template&id=d9c3ea8c&");
+
+
+/***/ }),
+
+/***/ "./resources/js/Frontend/HomeFront/View/Register.vue?vue&type=template&id=cd05f7ee&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/Frontend/HomeFront/View/Register.vue?vue&type=template&id=cd05f7ee& ***!
+  \******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Register_vue_vue_type_template_id_cd05f7ee___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Register_vue_vue_type_template_id_cd05f7ee___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Register_vue_vue_type_template_id_cd05f7ee___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Register.vue?vue&type=template&id=cd05f7ee& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/HomeFront/View/Register.vue?vue&type=template&id=cd05f7ee&");
+
+
+/***/ }),
+
+/***/ "./resources/js/Frontend/HomeFront/View/Restuarant.vue?vue&type=template&id=0811927b&":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/Frontend/HomeFront/View/Restuarant.vue?vue&type=template&id=0811927b& ***!
+  \********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Restuarant_vue_vue_type_template_id_0811927b___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Restuarant_vue_vue_type_template_id_0811927b___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Restuarant_vue_vue_type_template_id_0811927b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Restuarant.vue?vue&type=template&id=0811927b& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/HomeFront/View/Restuarant.vue?vue&type=template&id=0811927b&");
+
+
+/***/ }),
+
+/***/ "./resources/js/Frontend/HomeFront/View/index.vue?vue&type=template&id=2124e8fc&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/Frontend/HomeFront/View/index.vue?vue&type=template&id=2124e8fc& ***!
+  \***************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_2124e8fc___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_2124e8fc___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_2124e8fc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=template&id=2124e8fc& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/HomeFront/View/index.vue?vue&type=template&id=2124e8fc&");
+
+
+/***/ }),
+
 /***/ "./resources/js/Frontend/Include/Footer.vue?vue&type=template&id=311d4d11&":
 /*!*********************************************************************************!*\
   !*** ./resources/js/Frontend/Include/Footer.vue?vue&type=template&id=311d4d11& ***!
@@ -40319,19 +40990,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/Frontend/Include/HowWork.vue?vue&type=template&id=0e3052fb&":
-/*!**********************************************************************************!*\
-  !*** ./resources/js/Frontend/Include/HowWork.vue?vue&type=template&id=0e3052fb& ***!
-  \**********************************************************************************/
+/***/ "./resources/js/Frontend/Include/HeaderRestuarantDetail.vue?vue&type=template&id=6b363e69&":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/Frontend/Include/HeaderRestuarantDetail.vue?vue&type=template&id=6b363e69& ***!
+  \*************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HowWork_vue_vue_type_template_id_0e3052fb___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HowWork_vue_vue_type_template_id_0e3052fb___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderRestuarantDetail_vue_vue_type_template_id_6b363e69___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderRestuarantDetail_vue_vue_type_template_id_6b363e69___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HowWork_vue_vue_type_template_id_0e3052fb___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./HowWork.vue?vue&type=template&id=0e3052fb& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/Include/HowWork.vue?vue&type=template&id=0e3052fb&");
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderRestuarantDetail_vue_vue_type_template_id_6b363e69___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./HeaderRestuarantDetail.vue?vue&type=template&id=6b363e69& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/Include/HeaderRestuarantDetail.vue?vue&type=template&id=6b363e69&");
 
 
 /***/ }),
@@ -40370,6 +41041,40 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Frontend/Include/SubHeaderRestuarant.vue?vue&type=template&id=f19f3348&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/Frontend/Include/SubHeaderRestuarant.vue?vue&type=template&id=f19f3348& ***!
+  \**********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SubHeaderRestuarant_vue_vue_type_template_id_f19f3348___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SubHeaderRestuarant_vue_vue_type_template_id_f19f3348___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SubHeaderRestuarant_vue_vue_type_template_id_f19f3348___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./SubHeaderRestuarant.vue?vue&type=template&id=f19f3348& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/Include/SubHeaderRestuarant.vue?vue&type=template&id=f19f3348&");
+
+
+/***/ }),
+
+/***/ "./resources/js/Frontend/Vender/Dashboard/View/view.vue?vue&type=template&id=d4074134&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/Frontend/Vender/Dashboard/View/view.vue?vue&type=template&id=d4074134& ***!
+  \*********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_view_vue_vue_type_template_id_d4074134___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_view_vue_vue_type_template_id_d4074134___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_view_vue_vue_type_template_id_d4074134___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./view.vue?vue&type=template&id=d4074134& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/Vender/Dashboard/View/view.vue?vue&type=template&id=d4074134&");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
 /*!*************************************************************************************!*\
   !*** ./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e& ***!
@@ -40404,6 +41109,31 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [_c("router-view")], 1)
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Backend/Dashboard/View/view.vue?vue&type=template&id=15e8362b&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Backend/Dashboard/View/view.vue?vue&type=template&id=15e8362b& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("h1", [_vm._v("Admin Dashboard")])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -40490,9 +41220,16 @@ var render = function() {
     [
       _c("Navbar"),
       _vm._v(" "),
-      _c("SubHeader"),
+      this.$router.currentRoute.name == "home" ? _c("SubHeaderHome") : _vm._e(),
       _vm._v(" "),
-      _c("HowItWork"),
+      this.$router.currentRoute.name != "home" &&
+      this.$router.currentRoute.name != "/restuarant_detail"
+        ? _c("SubHeaderRestuarant")
+        : _vm._e(),
+      _vm._v(" "),
+      this.$router.currentRoute.name == "/restuarant_detail"
+        ? _c("HeaderRestuarantDetail")
+        : _vm._e(),
       _vm._v(" "),
       _c("router-view"),
       _vm._v(" "),
@@ -40512,6 +41249,3726 @@ render._withStripped = true
 /*!************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/Customer/Product/View/View.vue?vue&type=template&id=2610822d& ***!
   \************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("div", { staticClass: "white_bg" }, [
+        _c("div", { staticClass: "container margin_60" }, [
+          _c("div", { staticClass: "main_title" }, [
+            _c("h2", { staticClass: "nomargin_top" }, [
+              _vm._v("Choose from Most Popular")
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "\n                Cum doctus civibus efficiantur in imperdiet deterruisset.\n            "
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-lg-6" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "strip_list",
+                  attrs: { href: "detail_page.html" }
+                },
+                [
+                  _c("div", { staticClass: "ribbon_1" }, [_vm._v("Popular")]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "desc" }, [
+                    _c("div", { staticClass: "thumb_strip" }, [
+                      _c("img", {
+                        attrs: {
+                          src: "/assets/img/thumb_restaurant.jpg",
+                          alt: ""
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "rating" }, [
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star" })
+                    ]),
+                    _vm._v(" "),
+                    _c("h3", [_vm._v("Taco Mexican")]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "type" }, [
+                      _vm._v(
+                        "\n                            Mexican / American\n                        "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "location" }, [
+                      _vm._v(
+                        "\n                            135 Newtownards Road, Belfast, BT4. "
+                      ),
+                      _c("span", { staticClass: "opening" }, [
+                        _vm._v("Opens at 17:00")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("ul", [
+                      _c("li", [
+                        _vm._v("Take away"),
+                        _c("i", { staticClass: "icon_check_alt2 ok" })
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _vm._v("Delivery"),
+                        _c("i", { staticClass: "icon_check_alt2 ok" })
+                      ])
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "strip_list",
+                  attrs: { href: "detail_page.html" }
+                },
+                [
+                  _c("div", { staticClass: "ribbon_1" }, [_vm._v("Popular")]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "desc" }, [
+                    _c("div", { staticClass: "thumb_strip" }, [
+                      _c("img", {
+                        attrs: {
+                          src: "/assets/img/thumb_restaurant_2.jpg",
+                          alt: ""
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "rating" }, [
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star" })
+                    ]),
+                    _vm._v(" "),
+                    _c("h3", [_vm._v("Naples Pizza")]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "type" }, [
+                      _vm._v(
+                        "\n                            Italian / Pizza\n                        "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "location" }, [
+                      _vm._v(
+                        "\n                            135 Newtownards Road, Belfast, BT4. "
+                      ),
+                      _c("span", { staticClass: "opening" }, [
+                        _vm._v("Opens at 17:00")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("ul", [
+                      _c("li", [
+                        _vm._v("Take away"),
+                        _c("i", { staticClass: "icon_check_alt2 ok" })
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _vm._v("Delivery"),
+                        _c("i", { staticClass: "icon_check_alt2 ok" })
+                      ])
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "strip_list",
+                  attrs: { href: "detail_page.html" }
+                },
+                [
+                  _c("div", { staticClass: "ribbon_1" }, [_vm._v("Popular")]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "desc" }, [
+                    _c("div", { staticClass: "thumb_strip" }, [
+                      _c("img", {
+                        attrs: {
+                          src: "/assets/img/thumb_restaurant_3.jpg",
+                          alt: ""
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "rating" }, [
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star" })
+                    ]),
+                    _vm._v(" "),
+                    _c("h3", [_vm._v("Japan Food")]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "type" }, [
+                      _vm._v(
+                        "\n                            Sushi / Japanese\n                        "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "location" }, [
+                      _vm._v(
+                        "\n                            135 Newtownards Road, Belfast, BT4. "
+                      ),
+                      _c("span", { staticClass: "opening" }, [
+                        _vm._v("Opens at 17:00")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("ul", [
+                      _c("li", [
+                        _vm._v("Take away"),
+                        _c("i", { staticClass: "icon_check_alt2 ok" })
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _vm._v("Delivery"),
+                        _c("i", { staticClass: "icon_check_alt2 ok" })
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-6" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "strip_list",
+                  attrs: { href: "detail_page.html" }
+                },
+                [
+                  _c("div", { staticClass: "ribbon_1" }, [_vm._v("Popular")]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "desc" }, [
+                    _c("div", { staticClass: "thumb_strip" }, [
+                      _c("img", {
+                        attrs: {
+                          src: "/assets/img/thumb_restaurant_4.jpg",
+                          alt: ""
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "rating" }, [
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star" })
+                    ]),
+                    _vm._v(" "),
+                    _c("h3", [_vm._v("Sushi Gold")]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "type" }, [
+                      _vm._v(
+                        "\n                            Sushi / Japanese\n                        "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "location" }, [
+                      _vm._v(
+                        "\n                            135 Newtownards Road, Belfast, BT4. "
+                      ),
+                      _c("span", { staticClass: "opening" }, [
+                        _vm._v("Opens at 17:00")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("ul", [
+                      _c("li", [
+                        _vm._v("Take away"),
+                        _c("i", { staticClass: "icon_check_alt2 ok" })
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _vm._v("Delivery"),
+                        _c("i", { staticClass: "icon_close_alt2 no" })
+                      ])
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "strip_list",
+                  attrs: { href: "detail_page.html" }
+                },
+                [
+                  _c("div", { staticClass: "ribbon_1" }, [_vm._v("Popular")]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "desc" }, [
+                    _c("div", { staticClass: "thumb_strip" }, [
+                      _c("img", {
+                        attrs: {
+                          src: "/assets/img/thumb_restaurant_5.jpg",
+                          alt: ""
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "rating" }, [
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star" })
+                    ]),
+                    _vm._v(" "),
+                    _c("h3", [_vm._v("Dragon Tower")]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "type" }, [
+                      _vm._v(
+                        "\n                            Chinese / Thai\n                        "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "location" }, [
+                      _vm._v(
+                        "\n                            135 Newtownards Road, Belfast, BT4. "
+                      ),
+                      _c("span", { staticClass: "opening" }, [
+                        _vm._v("Opens at 17:00")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("ul", [
+                      _c("li", [
+                        _vm._v("Take away"),
+                        _c("i", { staticClass: "icon_check_alt2 ok" })
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _vm._v("Delivery"),
+                        _c("i", { staticClass: "icon_check_alt2 ok" })
+                      ])
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "strip_list",
+                  attrs: { href: "detail_page.html" }
+                },
+                [
+                  _c("div", { staticClass: "ribbon_1" }, [_vm._v("Popular")]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "desc" }, [
+                    _c("div", { staticClass: "thumb_strip" }, [
+                      _c("img", {
+                        attrs: {
+                          src: "/assets/img/thumb_restaurant_6.jpg",
+                          alt: ""
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "rating" }, [
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star" })
+                    ]),
+                    _vm._v(" "),
+                    _c("h3", [_vm._v("China Food")]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "type" }, [
+                      _vm._v(
+                        "\n                            Chinese / Vietnam\n                        "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "location" }, [
+                      _vm._v(
+                        "\n                            135 Newtownards Road, Belfast, BT4. "
+                      ),
+                      _c("span", { staticClass: "opening" }, [
+                        _vm._v("Opens at 17:00")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("ul", [
+                      _c("li", [
+                        _vm._v("Take away"),
+                        _c("i", { staticClass: "icon_check_alt2 ok" })
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _vm._v("Delivery"),
+                        _c("i", { staticClass: "icon_check_alt2 ok" })
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "high_light" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("h3", [_vm._v("Choose from over 2,000 Restaurants")]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula."
+            )
+          ]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "list_page.html" } }, [
+            _vm._v("View all Restaurants")
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "parallax-window",
+          attrs: {
+            "data-parallax": "scroll",
+            "data-image-src": "/assets/img/bg_office.jpg",
+            "data-natural-width": "1200",
+            "data-natural-height": "600"
+          }
+        },
+        [
+          _c("div", { staticClass: "parallax-content" }, [
+            _c("div", { staticClass: "sub_content" }, [
+              _c("i", { staticClass: "icon_mug" }),
+              _vm._v(" "),
+              _c("h3", [_vm._v("We also deliver to your office")]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n                Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.\n            "
+                )
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "container margin_60" }, [
+        _c("div", { staticClass: "main_title margin_mobile" }, [
+          _c("h2", { staticClass: "nomargin_top" }, [_vm._v("Work with Us")]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "\n            Cum doctus civibus efficiantur in imperdiet deterruisset.\n        "
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row justify-content-center" }, [
+          _c("div", { staticClass: "col-md-5" }, [
+            _c(
+              "a",
+              {
+                staticClass: "box_work",
+                attrs: { href: "submit_restaurant.html" }
+              },
+              [
+                _c("img", {
+                  staticClass: "img-fluid",
+                  attrs: {
+                    src: "/assets/img/submit_restaurant.jpg",
+                    width: "848",
+                    height: "480",
+                    alt: ""
+                  }
+                }),
+                _vm._v(" "),
+                _c("h3", [
+                  _vm._v("Submit your Restaurant"),
+                  _c("span", [_vm._v("Start to earn customers")])
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Lorem ipsum dolor sit amet, ut virtute fabellas vix, no pri falli eloquentiam adversarium. Ea legere labore eam. Et eum sumo ocurreret, eos ei saepe oratio omittantur, legere eligendi partiendo pro te."
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "btn_1" }, [_vm._v("Read more")])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-5" }, [
+            _c(
+              "a",
+              {
+                staticClass: "box_work",
+                attrs: { href: "submit_driver.html" }
+              },
+              [
+                _c("img", {
+                  staticClass: "img-fluid",
+                  attrs: {
+                    src: "/assets/img/delivery.jpg",
+                    width: "848",
+                    height: "480",
+                    alt: ""
+                  }
+                }),
+                _vm._v(" "),
+                _c("h3", [
+                  _vm._v("We are looking for a Driver"),
+                  _c("span", [_vm._v("Start to earn money")])
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Lorem ipsum dolor sit amet, ut virtute fabellas vix, no pri falli eloquentiam adversarium. Ea legere labore eam. Et eum sumo ocurreret, eos ei saepe oratio omittantur, legere eligendi partiendo pro te."
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "btn_1" }, [_vm._v("Read more")])
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/HomeFront/View/AboutUs.vue?vue&type=template&id=000ec615&":
+/*!********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/HomeFront/View/AboutUs.vue?vue&type=template&id=000ec615& ***!
+  \********************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("div", { attrs: { id: "position" } }, [
+        _c("div", { staticClass: "container" }, [
+          _c("ul", [
+            _c("li", [_c("a", { attrs: { href: "#0" } }, [_vm._v("Home")])]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#0" } }, [_vm._v("Category")])
+            ]),
+            _vm._v(" "),
+            _c("li", [_vm._v("Page active")])
+          ]),
+          _vm._v(" "),
+          _c(
+            "a",
+            { staticClass: "search-overlay-menu-btn", attrs: { href: "#0" } },
+            [_c("i", { staticClass: "icon-search-6" }), _vm._v(" Search")]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "container margin_60_35" }, [
+        _c("div", { staticClass: "row justify-content-between" }, [
+          _c("div", { staticClass: "col-xl-5 col-lg-5" }, [
+            _c("h3", { staticClass: "nomargin_top" }, [
+              _vm._v("Some words about us")
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "\n                Id pri consul aeterno petentium. Vivendo abhorreant et vim, et quot persecuti mel. Libris hendrerit ex sea. Duo legere evertitur an, pri hinc "
+              ),
+              _c("strong", [_vm._v("doctus definitiones")]),
+              _vm._v(
+                " an, vix id dicam putent. Ius ornatus instructior in.\n            "
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "\n                Id pri consul aeterno petentium. Vivendo abhorreant et vim, et quot persecuti mel. Libris hendrerit ex sea. Duo legere evertitur an, pri hinc doctus definitiones an, vix id dicam putent. Ius ornatus instructior in.\n            "
+              )
+            ]),
+            _vm._v(" "),
+            _c("h4", [_vm._v("Mission")]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "\n                Id pri consul aeterno petentium. Vivendo abhorreant et vim, et quot persecuti mel. "
+              ),
+              _c("strong", [_vm._v("Libris hendrerit")]),
+              _vm._v(
+                " ex sea. Duo legere evertitur an, pri hinc doctus definitiones an, vix id dicam putent. Ius ornatus instructior in.\n            "
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "\n                Id pri consul aeterno petentium. Vivendo abhorreant et vim, et quot persecuti mel. Libris hendrerit ex sea. Duo legere evertitur an, pri hinc doctus definitiones an, vix id dicam putent. Ius ornatus instructior in.\n            "
+              )
+            ]),
+            _vm._v(" "),
+            _c("h4", [_vm._v("Filosofy")]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "\n                Id pri consul aeterno petentium. Vivendo abhorreant et vim, et quot persecuti mel. "
+              ),
+              _c("strong", [_vm._v("Libris hendrerit")]),
+              _vm._v(
+                " ex sea. Duo legere evertitur an, pri hinc doctus definitiones an, vix id dicam putent. Ius ornatus instructior in.\n            "
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-xl-7 col-lg-7 text-right d-none d-lg-block" },
+            [
+              _c("img", {
+                staticClass: "img-fluid",
+                attrs: { src: "/assets/img/devices.jpg", alt: "" }
+              })
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("hr", { staticClass: "more_margin" }),
+        _vm._v(" "),
+        _c("div", { staticClass: "main_title" }, [
+          _c("h2", { staticClass: "nomargin_top" }, [
+            _vm._v("Quick food quality feautures")
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "\n            Cum doctus civibus efficiantur in imperdiet deterruisset.\n        "
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            {
+              staticClass: "col-md-6 wow fadeIn",
+              attrs: { "data-wow-delay": "0.1s" }
+            },
+            [
+              _c("div", { staticClass: "feature" }, [
+                _c("i", { staticClass: "icon_building" }),
+                _vm._v(" "),
+                _c("h3", [
+                  _c("span", [_vm._v("+ 1000")]),
+                  _vm._v(" Restaurants")
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "\n                    Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.\n                "
+                  )
+                ])
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "col-md-6 wow fadeIn",
+              attrs: { "data-wow-delay": "0.2s" }
+            },
+            [
+              _c("div", { staticClass: "feature" }, [
+                _c("i", { staticClass: "icon_documents_alt" }),
+                _vm._v(" "),
+                _c("h3", [_c("span", [_vm._v("+1000")]), _vm._v(" Food Menu")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "\n                    Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.\n                "
+                  )
+                ])
+              ])
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            {
+              staticClass: "col-md-6 wow fadeIn",
+              attrs: { "data-wow-delay": "0.3s" }
+            },
+            [
+              _c("div", { staticClass: "feature" }, [
+                _c("i", { staticClass: "icon_bag_alt" }),
+                _vm._v(" "),
+                _c("h3", [
+                  _c("span", [_vm._v("Delivery")]),
+                  _vm._v(" or Takeaway")
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "\n                    Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.\n                "
+                  )
+                ])
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "col-md-6 wow fadeIn",
+              attrs: { "data-wow-delay": "0.4s" }
+            },
+            [
+              _c("div", { staticClass: "feature" }, [
+                _c("i", { staticClass: "icon_mobile" }),
+                _vm._v(" "),
+                _c("h3", [_c("span", [_vm._v("Mobile")]), _vm._v(" support")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "\n                    Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.\n                "
+                  )
+                ])
+              ])
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            {
+              staticClass: "col-md-6 wow fadeIn",
+              attrs: { "data-wow-delay": "0.5s" }
+            },
+            [
+              _c("div", { staticClass: "feature" }, [
+                _c("i", { staticClass: "icon_wallet" }),
+                _vm._v(" "),
+                _c("h3", [_c("span", [_vm._v("Cash")]), _vm._v(" payment")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "\n                    Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.\n                "
+                  )
+                ])
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "col-md-6 wow fadeIn",
+              attrs: { "data-wow-delay": "0.6s" }
+            },
+            [
+              _c("div", { staticClass: "feature" }, [
+                _c("i", { staticClass: "icon_creditcard" }),
+                _vm._v(" "),
+                _c("h3", [
+                  _c("span", [_vm._v("Secure card")]),
+                  _vm._v(" payment")
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "\n                    Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.\n                "
+                  )
+                ])
+              ])
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-lg-6 nopadding features-intro-img" }, [
+            _c("div", { staticClass: "features-bg" }, [
+              _c("div", { staticClass: "features-img" })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-6 nopadding" }, [
+            _c("div", { staticClass: "features-content" }, [
+              _c("h3", [_vm._v('"Ex vero mediocrem"')]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus.\n                "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n                    Per ea erant aeque corpora, an agam tibique nec. At recusabo expetendis vim. Tractatos principes mel te, dolor solet viderer usu ad.\n                "
+                )
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/HomeFront/View/Login.vue?vue&type=template&id=623eabf3&":
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/HomeFront/View/Login.vue?vue&type=template&id=623eabf3& ***!
+  \******************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("div", {}, [
+      _c("div", { staticClass: "center" }, [
+        _c("div", { staticClass: "container-fluid" }, [
+          _c(
+            "form",
+            {
+              staticClass: "popup-form",
+              staticStyle: {
+                padding: "5px",
+                background: "grey",
+                "border-radius": "10px"
+              },
+              attrs: { action: "#", id: "myRegister" },
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                  return _vm.login()
+                }
+              }
+            },
+            [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control form-white",
+                staticStyle: { "border-radius": "10px" },
+                attrs: { type: "text", placeholder: "Email" }
+              }),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control form-white",
+                staticStyle: { "border-radius": "10px" },
+                attrs: { type: "text", placeholder: "Password" }
+              }),
+              _vm._v(" "),
+              _c("label", { attrs: { for: "check_2" } }, [
+                _c("strong", { staticStyle: { color: "white" } }, [
+                  _vm._v("I don't have account !! ")
+                ]),
+                _c(
+                  "a",
+                  {
+                    staticStyle: { color: "blue" },
+                    attrs: { href: "/register" }
+                  },
+                  [_vm._v("Register")]
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "btn btn-submit", attrs: { type: "submit" } },
+                [_vm._v("Login")]
+              )
+            ]
+          )
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "login_icon text-center" }, [
+      _c("i", { staticClass: "icon_lock_alt" })
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/HomeFront/View/MenuRestuarant.vue?vue&type=template&id=d9c3ea8c&":
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/HomeFront/View/MenuRestuarant.vue?vue&type=template&id=d9c3ea8c& ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("div", { attrs: { id: "position" } }, [
+        _c("div", { staticClass: "container" }, [
+          _c("ul", [
+            _c("li", [_c("a", { attrs: { href: "#0" } }, [_vm._v("Home")])]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#0" } }, [_vm._v("Category")])
+            ]),
+            _vm._v(" "),
+            _c("li", [_vm._v("Page active")])
+          ]),
+          _vm._v(" "),
+          _c(
+            "a",
+            { staticClass: "search-overlay-menu-btn", attrs: { href: "#0" } },
+            [_c("i", { staticClass: "icon-search-6" }), _vm._v(" Search")]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "container margin_60_35" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-lg-3" }, [
+            _c("p", [
+              _c(
+                "a",
+                { staticClass: "btn_side", attrs: { href: "list_page.html" } },
+                [_vm._v("Back to search")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "box_style_1" }, [
+              _c("ul", { attrs: { id: "cat_nav" } }, [
+                _c("li", [
+                  _c(
+                    "a",
+                    { staticClass: "active", attrs: { href: "#starters" } },
+                    [_vm._v("Starters "), _c("span", [_vm._v("(141)")])]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#main_courses" } }, [
+                    _vm._v("Main Courses "),
+                    _c("span", [_vm._v("(20)")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#beef" } }, [
+                    _vm._v("Beef "),
+                    _c("span", [_vm._v("(12)")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#desserts" } }, [
+                    _vm._v("Desserts "),
+                    _c("span", [_vm._v("(11)")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#drinks" } }, [
+                    _vm._v("Drinks "),
+                    _c("span", [_vm._v("(20)")])
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "box_style_2 d-none d-sm-block",
+                attrs: { id: "help" }
+              },
+              [
+                _c("i", { staticClass: "icon_lifesaver" }),
+                _vm._v(" "),
+                _c("h4", [_vm._v("Need "), _c("span", [_vm._v("Help?")])]),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass: "phone",
+                    attrs: { href: "tel://004542344599" }
+                  },
+                  [_vm._v("+45 423 445 99")]
+                ),
+                _vm._v(" "),
+                _c("small", [_vm._v("Monday to Friday 9.00am - 7.30pm")])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-6" }, [
+            _c(
+              "div",
+              { staticClass: "box_style_2", attrs: { id: "main_menu" } },
+              [
+                _c("h2", { staticClass: "inner" }, [_vm._v("Menu")]),
+                _vm._v(" "),
+                _c(
+                  "h3",
+                  { staticClass: "nomargin_top", attrs: { id: "starters" } },
+                  [_vm._v("Starters")]
+                ),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "\n                    Te ferri iisque aliquando pro, posse nonumes efficiantur in cum. Sensibus reprimique eu pro. Fuisset mentitum deleniti sit ea.\n                "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("table", { staticClass: "table table-striped cart-list" }, [
+                  _c("thead", [
+                    _c("tr", [
+                      _c("th", [
+                        _vm._v(
+                          "\n                                Item\n                            "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("th", [
+                        _vm._v(
+                          "\n                                Price\n                            "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("th", [
+                        _vm._v(
+                          "\n                                Order\n                            "
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tbody", [
+                    _c("tr", [
+                      _c("td", [
+                        _c("figure", { staticClass: "thumb_menu_list" }, [
+                          _c("img", {
+                            attrs: { src: "img/menu-thumb-1.jpg", alt: "thumb" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [_vm._v("1. Mexican Enchiladas")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                                    Fuisset mentitum deleniti sit ea.\n                                "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_c("strong", [_vm._v("€ 9,40")])]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "options" }, [
+                        _c(
+                          "div",
+                          { staticClass: "dropdown dropdown-options" },
+                          [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-toggle",
+                                attrs: {
+                                  href: "#",
+                                  "data-toggle": "dropdown",
+                                  "aria-expanded": "true"
+                                }
+                              },
+                              [_c("i", { staticClass: "icon_plus_alt2" })]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "dropdown-menu" }, [
+                              _c("h5", [_vm._v("Select an option")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option1",
+                                    name: "options_1",
+                                    checked: ""
+                                  }
+                                }),
+                                _vm._v("Medium "),
+                                _c("span", [_vm._v("+ $3.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option2",
+                                    name: "options_1"
+                                  }
+                                }),
+                                _vm._v("Large "),
+                                _c("span", [_vm._v("+ $5.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option3",
+                                    name: "options_1"
+                                  }
+                                }),
+                                _vm._v("Extra Large "),
+                                _c("span", [_vm._v("+ $8.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("h5", [_vm._v("Add ingredients")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Tomato "),
+                                _c("span", [_vm._v("+ $4.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Peppers "),
+                                _c("span", [_vm._v("+ $2.50")])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "add_to_basket",
+                                  attrs: { href: "#0" }
+                                },
+                                [_vm._v("Add to cart")]
+                              )
+                            ])
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [
+                        _c("figure", { staticClass: "thumb_menu_list" }, [
+                          _c("img", {
+                            attrs: { src: "img/menu-thumb-2.jpg", alt: "thumb" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [_vm._v("2. Fajitas")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                                    Fuisset mentitum deleniti sit ea.\n                                "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_c("strong", [_vm._v("€ 6,80")])]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "options" }, [
+                        _c(
+                          "div",
+                          { staticClass: "dropdown dropdown-options" },
+                          [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-toggle",
+                                attrs: {
+                                  href: "#",
+                                  "data-toggle": "dropdown",
+                                  "aria-expanded": "true"
+                                }
+                              },
+                              [_c("i", { staticClass: "icon_plus_alt2" })]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "dropdown-menu" }, [
+                              _c("h5", [_vm._v("Select an option")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option1",
+                                    name: "options_2",
+                                    checked: ""
+                                  }
+                                }),
+                                _vm._v("Medium "),
+                                _c("span", [_vm._v("+ $3.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option2",
+                                    name: "options_2"
+                                  }
+                                }),
+                                _vm._v("Large "),
+                                _c("span", [_vm._v("+ $5.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option3",
+                                    name: "options_2"
+                                  }
+                                }),
+                                _vm._v("Extra Large "),
+                                _c("span", [_vm._v("+ $8.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("h5", [_vm._v("Add ingredients")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Tomato "),
+                                _c("span", [_vm._v("+ $4.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Peppers "),
+                                _c("span", [_vm._v("+ $2.50")])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "add_to_basket",
+                                  attrs: { href: "#0" }
+                                },
+                                [_vm._v("Add to cart")]
+                              )
+                            ])
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [
+                        _c("figure", { staticClass: "thumb_menu_list" }, [
+                          _c("img", {
+                            attrs: { src: "img/menu-thumb-3.jpg", alt: "thumb" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [_vm._v("3. Royal Fajitas")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                                    Fuisset mentitum deleniti sit ea.\n                                "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_c("strong", [_vm._v("€ 5,70")])]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "options" }, [
+                        _c(
+                          "div",
+                          { staticClass: "dropdown dropdown-options" },
+                          [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-toggle",
+                                attrs: {
+                                  href: "#",
+                                  "data-toggle": "dropdown",
+                                  "aria-expanded": "true"
+                                }
+                              },
+                              [_c("i", { staticClass: "icon_plus_alt2" })]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "dropdown-menu" }, [
+                              _c("h5", [_vm._v("Select an option")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option1",
+                                    name: "options_3",
+                                    checked: ""
+                                  }
+                                }),
+                                _vm._v("Medium "),
+                                _c("span", [_vm._v("+ $3.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option2",
+                                    name: "options_3"
+                                  }
+                                }),
+                                _vm._v("Large "),
+                                _c("span", [_vm._v("+ $5.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option3",
+                                    name: "options_3"
+                                  }
+                                }),
+                                _vm._v("Extra Large "),
+                                _c("span", [_vm._v("+ $8.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("h5", [_vm._v("Add ingredients")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Tomato "),
+                                _c("span", [_vm._v("+ $4.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Peppers "),
+                                _c("span", [_vm._v("+ $2.50")])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "add_to_basket",
+                                  attrs: { href: "#0" }
+                                },
+                                [_vm._v("Add to cart")]
+                              )
+                            ])
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [
+                        _c("figure", { staticClass: "thumb_menu_list" }, [
+                          _c("img", {
+                            attrs: { src: "img/menu-thumb-4.jpg", alt: "thumb" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [_vm._v("4. Chicken Enchilada Wrap")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                                    Fuisset mentitum deleniti sit ea.\n                                "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_c("strong", [_vm._v("€ 5,20")])]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "options" }, [
+                        _c(
+                          "div",
+                          { staticClass: "dropdown dropdown-options" },
+                          [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-toggle",
+                                attrs: {
+                                  href: "#",
+                                  "data-toggle": "dropdown",
+                                  "aria-expanded": "true"
+                                }
+                              },
+                              [_c("i", { staticClass: "icon_plus_alt2" })]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "dropdown-menu" }, [
+                              _c("h5", [_vm._v("Select an option")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option1",
+                                    name: "options_4",
+                                    checked: ""
+                                  }
+                                }),
+                                _vm._v("Medium "),
+                                _c("span", [_vm._v("+ $3.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option2",
+                                    name: "options_4"
+                                  }
+                                }),
+                                _vm._v("Large "),
+                                _c("span", [_vm._v("+ $5.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option3",
+                                    name: "options_4"
+                                  }
+                                }),
+                                _vm._v("Extra Large "),
+                                _c("span", [_vm._v("+ $8.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("h5", [_vm._v("Add ingredients")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Tomato "),
+                                _c("span", [_vm._v("+ $4.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Peppers "),
+                                _c("span", [_vm._v("+ $2.50")])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "add_to_basket",
+                                  attrs: { href: "#0" }
+                                },
+                                [_vm._v("Add to cart")]
+                              )
+                            ])
+                          ]
+                        )
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("hr"),
+                _vm._v(" "),
+                _c("h3", { attrs: { id: "main_courses" } }, [
+                  _vm._v("Main courses")
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "\n                    Te ferri iisque aliquando pro, posse nonumes efficiantur in cum. Sensibus reprimique eu pro. Fuisset mentitum deleniti sit ea.\n                "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("table", { staticClass: "table table-striped cart-list " }, [
+                  _c("thead", [
+                    _c("tr", [
+                      _c("th", [
+                        _vm._v(
+                          "\n                                Item\n                            "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("th", [
+                        _vm._v(
+                          "\n                                Price\n                            "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("th", [
+                        _vm._v(
+                          "\n                                Order\n                            "
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tbody", [
+                    _c("tr", [
+                      _c("td", [
+                        _c("figure", { staticClass: "thumb_menu_list" }, [
+                          _c("img", {
+                            attrs: { src: "img/menu-thumb-5.jpg", alt: "thumb" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [_vm._v("5. Cheese Quesadilla")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                                    Fuisset mentitum deleniti sit ea.\n                                "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_c("strong", [_vm._v("€ 12,00")])]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "options" }, [
+                        _c(
+                          "div",
+                          { staticClass: "dropdown dropdown-options" },
+                          [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-toggle",
+                                attrs: {
+                                  href: "#",
+                                  "data-toggle": "dropdown",
+                                  "aria-expanded": "true"
+                                }
+                              },
+                              [_c("i", { staticClass: "icon_plus_alt2" })]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "dropdown-menu" }, [
+                              _c("h5", [_vm._v("Select an option")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option1",
+                                    name: "options_5",
+                                    checked: ""
+                                  }
+                                }),
+                                _vm._v("Medium "),
+                                _c("span", [_vm._v("+ $3.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option2",
+                                    name: "options_5"
+                                  }
+                                }),
+                                _vm._v("Large "),
+                                _c("span", [_vm._v("+ $5.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option3",
+                                    name: "options_5"
+                                  }
+                                }),
+                                _vm._v("Extra Large "),
+                                _c("span", [_vm._v("+ $8.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("h5", [_vm._v("Add ingredients")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Tomato "),
+                                _c("span", [_vm._v("+ $4.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Peppers "),
+                                _c("span", [_vm._v("+ $2.50")])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "add_to_basket",
+                                  attrs: { href: "#0" }
+                                },
+                                [_vm._v("Add to cart")]
+                              )
+                            ])
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [
+                        _c("figure", { staticClass: "thumb_menu_list" }, [
+                          _c("img", {
+                            attrs: { src: "img/menu-thumb-6.jpg", alt: "thumb" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [_vm._v("6. Chorizo & Cheese")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                                    Fuisset mentitum deleniti sit ea.\n                                "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_c("strong", [_vm._v("€ 24,71")])]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "options" }, [
+                        _c(
+                          "div",
+                          { staticClass: "dropdown dropdown-options" },
+                          [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-toggle",
+                                attrs: {
+                                  href: "#",
+                                  "data-toggle": "dropdown",
+                                  "aria-expanded": "true"
+                                }
+                              },
+                              [_c("i", { staticClass: "icon_plus_alt2" })]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "dropdown-menu" }, [
+                              _c("h5", [_vm._v("Select an option")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option1",
+                                    name: "options_6",
+                                    checked: ""
+                                  }
+                                }),
+                                _vm._v("Medium "),
+                                _c("span", [_vm._v("+ $3.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option2",
+                                    name: "options_6"
+                                  }
+                                }),
+                                _vm._v("Large "),
+                                _c("span", [_vm._v("+ $5.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option3",
+                                    name: "options_6"
+                                  }
+                                }),
+                                _vm._v("Extra Large "),
+                                _c("span", [_vm._v("+ $8.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("h5", [_vm._v("Add ingredients")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Tomato "),
+                                _c("span", [_vm._v("+ $4.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Peppers "),
+                                _c("span", [_vm._v("+ $2.50")])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "add_to_basket",
+                                  attrs: { href: "#0" }
+                                },
+                                [_vm._v("Add to cart")]
+                              )
+                            ])
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [
+                        _c("figure", { staticClass: "thumb_menu_list" }, [
+                          _c("img", {
+                            attrs: { src: "img/menu-thumb-7.jpg", alt: "thumb" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [_vm._v("7. Beef Taco")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                                    Fuisset mentitum deleniti sit ea.\n                                "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_c("strong", [_vm._v("€ 8,70")])]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "options" }, [
+                        _c("a", { attrs: { href: "#0" } }, [
+                          _c("i", { staticClass: "icon_plus_alt2" })
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [
+                        _c("figure", { staticClass: "thumb_menu_list" }, [
+                          _c("img", {
+                            attrs: { src: "img/menu-thumb-8.jpg", alt: "thumb" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [_vm._v("8. Minced Beef Double Layer")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                                    Fuisset mentitum deleniti sit ea.\n                                "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_c("strong", [_vm._v("€ 6,30")])]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "options" }, [
+                        _c(
+                          "div",
+                          { staticClass: "dropdown dropdown-options" },
+                          [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-toggle",
+                                attrs: {
+                                  href: "#",
+                                  "data-toggle": "dropdown",
+                                  "aria-expanded": "true"
+                                }
+                              },
+                              [_c("i", { staticClass: "icon_plus_alt2" })]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "dropdown-menu" }, [
+                              _c("h5", [_vm._v("Select an option")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option1",
+                                    name: "options_7",
+                                    checked: ""
+                                  }
+                                }),
+                                _vm._v("Medium "),
+                                _c("span", [_vm._v("+ $3.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option2",
+                                    name: "options_7"
+                                  }
+                                }),
+                                _vm._v("Large "),
+                                _c("span", [_vm._v("+ $5.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option3",
+                                    name: "options_7"
+                                  }
+                                }),
+                                _vm._v("Extra Large "),
+                                _c("span", [_vm._v("+ $8.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("h5", [_vm._v("Add ingredients")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Tomato "),
+                                _c("span", [_vm._v("+ $4.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Peppers "),
+                                _c("span", [_vm._v("+ $2.50")])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "add_to_basket",
+                                  attrs: { href: "#0" }
+                                },
+                                [_vm._v("Add to cart")]
+                              )
+                            ])
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [
+                        _c("figure", { staticClass: "thumb_menu_list" }, [
+                          _c("img", {
+                            attrs: { src: "img/menu-thumb-9.jpg", alt: "thumb" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [_vm._v("9. Piri Piri Chicken")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                                    Fuisset mentitum deleniti sit ea.\n                                "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_c("strong", [_vm._v("€ 7,40")])]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "options" }, [
+                        _c(
+                          "div",
+                          { staticClass: "dropdown dropdown-options" },
+                          [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-toggle",
+                                attrs: {
+                                  href: "#",
+                                  "data-toggle": "dropdown",
+                                  "aria-expanded": "true"
+                                }
+                              },
+                              [_c("i", { staticClass: "icon_plus_alt2" })]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "dropdown-menu" }, [
+                              _c("h5", [_vm._v("Select an option")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option1",
+                                    name: "options_8",
+                                    checked: ""
+                                  }
+                                }),
+                                _vm._v("Medium "),
+                                _c("span", [_vm._v("+ $3.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option2",
+                                    name: "options_8"
+                                  }
+                                }),
+                                _vm._v("Large "),
+                                _c("span", [_vm._v("+ $5.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option3",
+                                    name: "options_8"
+                                  }
+                                }),
+                                _vm._v("Extra Large "),
+                                _c("span", [_vm._v("+ $8.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("h5", [_vm._v("Add ingredients")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Tomato "),
+                                _c("span", [_vm._v("+ $4.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Peppers "),
+                                _c("span", [_vm._v("+ $2.50")])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "add_to_basket",
+                                  attrs: { href: "#0" }
+                                },
+                                [_vm._v("Add to cart")]
+                              )
+                            ])
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [
+                        _c("figure", { staticClass: "thumb_menu_list" }, [
+                          _c("img", {
+                            attrs: {
+                              src: "img/menu-thumb-10.jpg",
+                              alt: "thumb"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [_vm._v("10. Burrito Al Pastor")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                                    Fuisset mentitum deleniti sit ea.\n                                "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_c("strong", [_vm._v("€ 7,70")])]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "options" }, [
+                        _c(
+                          "div",
+                          { staticClass: "dropdown dropdown-options" },
+                          [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-toggle",
+                                attrs: {
+                                  href: "#",
+                                  "data-toggle": "dropdown",
+                                  "aria-expanded": "true"
+                                }
+                              },
+                              [_c("i", { staticClass: "icon_plus_alt2" })]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "dropdown-menu" }, [
+                              _c("h5", [_vm._v("Select an option")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option1",
+                                    name: "options_9",
+                                    checked: ""
+                                  }
+                                }),
+                                _vm._v("Medium "),
+                                _c("span", [_vm._v("+ $3.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option2",
+                                    name: "options_9"
+                                  }
+                                }),
+                                _vm._v("Large "),
+                                _c("span", [_vm._v("+ $5.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option3",
+                                    name: "options_9"
+                                  }
+                                }),
+                                _vm._v("Extra Large "),
+                                _c("span", [_vm._v("+ $8.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("h5", [_vm._v("Add ingredients")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Tomato "),
+                                _c("span", [_vm._v("+ $4.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Peppers "),
+                                _c("span", [_vm._v("+ $2.50")])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "add_to_basket",
+                                  attrs: { href: "#0" }
+                                },
+                                [_vm._v("Add to cart")]
+                              )
+                            ])
+                          ]
+                        )
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("hr"),
+                _vm._v(" "),
+                _c("h3", { attrs: { id: "beef" } }, [_vm._v("Beef")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "\n                    Te ferri iisque aliquando pro, posse nonumes efficiantur in cum. Sensibus reprimique eu pro. Fuisset mentitum deleniti sit ea.\n                "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("table", { staticClass: "table table-striped cart-list " }, [
+                  _c("thead", [
+                    _c("tr", [
+                      _c("th", [
+                        _vm._v(
+                          "\n                                Item\n                            "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("th", [
+                        _vm._v(
+                          "\n                                Price\n                            "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("th", [
+                        _vm._v(
+                          "\n                                Order\n                            "
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tbody", [
+                    _c("tr", [
+                      _c("td", [
+                        _c("figure", { staticClass: "thumb_menu_list" }, [
+                          _c("img", {
+                            attrs: {
+                              src: "img/menu-thumb-11.jpg",
+                              alt: "thumb"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [_vm._v("11. Beef Enchilada Wrap")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                                    Fuisset mentitum deleniti sit ea.\n                                "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_c("strong", [_vm._v("€ 11,70")])]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "options" }, [
+                        _c(
+                          "div",
+                          { staticClass: "dropdown dropdown-options" },
+                          [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-toggle",
+                                attrs: {
+                                  href: "#",
+                                  "data-toggle": "dropdown",
+                                  "aria-expanded": "true"
+                                }
+                              },
+                              [_c("i", { staticClass: "icon_plus_alt2" })]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "dropdown-menu" }, [
+                              _c("h5", [_vm._v("Select an option")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option1",
+                                    name: "options_10",
+                                    checked: ""
+                                  }
+                                }),
+                                _vm._v("Medium "),
+                                _c("span", [_vm._v("+ $3.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option2",
+                                    name: "options_10"
+                                  }
+                                }),
+                                _vm._v("Large "),
+                                _c("span", [_vm._v("+ $5.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option3",
+                                    name: "options_10"
+                                  }
+                                }),
+                                _vm._v("Extra Large "),
+                                _c("span", [_vm._v("+ $8.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("h5", [_vm._v("Add ingredients")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Tomato "),
+                                _c("span", [_vm._v("+ $4.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Peppers "),
+                                _c("span", [_vm._v("+ $2.50")])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "add_to_basket",
+                                  attrs: { href: "#0" }
+                                },
+                                [_vm._v("Add to cart")]
+                              )
+                            ])
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [
+                        _c("figure", { staticClass: "thumb_menu_list" }, [
+                          _c("img", {
+                            attrs: {
+                              src: "img/menu-thumb-12.jpg",
+                              alt: "thumb"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [_vm._v("12. Chicken Fillet Taco")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                                    Fuisset mentitum deleniti sit ea.\n                                "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_c("strong", [_vm._v("€ 12,40")])]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "options" }, [
+                        _c(
+                          "div",
+                          { staticClass: "dropdown dropdown-options" },
+                          [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-toggle",
+                                attrs: {
+                                  href: "#",
+                                  "data-toggle": "dropdown",
+                                  "aria-expanded": "true"
+                                }
+                              },
+                              [_c("i", { staticClass: "icon_plus_alt2" })]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "dropdown-menu" }, [
+                              _c("h5", [_vm._v("Select an option")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option1",
+                                    name: "options_11",
+                                    checked: ""
+                                  }
+                                }),
+                                _vm._v("Medium "),
+                                _c("span", [_vm._v("+ $3.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option2",
+                                    name: "options_11"
+                                  }
+                                }),
+                                _vm._v("Large "),
+                                _c("span", [_vm._v("+ $5.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option3",
+                                    name: "options_11"
+                                  }
+                                }),
+                                _vm._v("Extra Large "),
+                                _c("span", [_vm._v("+ $8.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("h5", [_vm._v("Add ingredients")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Tomato "),
+                                _c("span", [_vm._v("+ $4.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Peppers "),
+                                _c("span", [_vm._v("+ $2.50")])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "add_to_basket",
+                                  attrs: { href: "#0" }
+                                },
+                                [_vm._v("Add to cart")]
+                              )
+                            ])
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [
+                        _c("figure", { staticClass: "thumb_menu_list" }, [
+                          _c("img", {
+                            attrs: {
+                              src: "img/menu-thumb-13.jpg",
+                              alt: "thumb"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [_vm._v("13. Tiger Prawn & Chorizo")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                                    Fuisset mentitum deleniti sit ea.\n                                "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_c("strong", [_vm._v("€ 24,71")])]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "options" }, [
+                        _c(
+                          "div",
+                          { staticClass: "dropdown dropdown-options" },
+                          [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-toggle",
+                                attrs: {
+                                  href: "#",
+                                  "data-toggle": "dropdown",
+                                  "aria-expanded": "true"
+                                }
+                              },
+                              [_c("i", { staticClass: "icon_plus_alt2" })]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "dropdown-menu" }, [
+                              _c("h5", [_vm._v("Select an option")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option1",
+                                    name: "options_12",
+                                    checked: ""
+                                  }
+                                }),
+                                _vm._v("Medium "),
+                                _c("span", [_vm._v("+ $3.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option2",
+                                    name: "options_12"
+                                  }
+                                }),
+                                _vm._v("Large "),
+                                _c("span", [_vm._v("+ $5.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option3",
+                                    name: "options_12"
+                                  }
+                                }),
+                                _vm._v("Extra Large "),
+                                _c("span", [_vm._v("+ $8.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("h5", [_vm._v("Add ingredients")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Tomato "),
+                                _c("span", [_vm._v("+ $4.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Peppers "),
+                                _c("span", [_vm._v("+ $2.50")])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "add_to_basket",
+                                  attrs: { href: "#0" }
+                                },
+                                [_vm._v("Add to cart")]
+                              )
+                            ])
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [
+                        _c("figure", { staticClass: "thumb_menu_list" }, [
+                          _c("img", {
+                            attrs: {
+                              src: "img/menu-thumb-14.jpg",
+                              alt: "thumb"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [_vm._v("14. Fillet Steak & Chorizo")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                                    Fuisset mentitum deleniti sit ea.\n                                "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_c("strong", [_vm._v("€ 15,30")])]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "options" }, [
+                        _c("a", { attrs: { href: "#0" } }, [
+                          _c("i", { staticClass: "icon_plus_alt2" })
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [
+                        _c("figure", { staticClass: "thumb_menu_list" }, [
+                          _c("img", {
+                            attrs: {
+                              src: "img/menu-thumb-15.jpg",
+                              alt: "thumb"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [_vm._v("15. Burrito's with Rice")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                                    Fuisset mentitum deleniti sit ea.\n                                "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_c("strong", [_vm._v("€ 9,70")])]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "options" }, [
+                        _c(
+                          "div",
+                          { staticClass: "dropdown dropdown-options" },
+                          [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-toggle",
+                                attrs: {
+                                  href: "#",
+                                  "data-toggle": "dropdown",
+                                  "aria-expanded": "true"
+                                }
+                              },
+                              [_c("i", { staticClass: "icon_plus_alt2" })]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "dropdown-menu" }, [
+                              _c("h5", [_vm._v("Select an option")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option1",
+                                    name: "options_13",
+                                    checked: ""
+                                  }
+                                }),
+                                _vm._v("Medium "),
+                                _c("span", [_vm._v("+ $3.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option2",
+                                    name: "options_13"
+                                  }
+                                }),
+                                _vm._v("Large "),
+                                _c("span", [_vm._v("+ $5.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option3",
+                                    name: "options_13"
+                                  }
+                                }),
+                                _vm._v("Extra Large "),
+                                _c("span", [_vm._v("+ $8.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("h5", [_vm._v("Add ingredients")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Tomato "),
+                                _c("span", [_vm._v("+ $4.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Peppers "),
+                                _c("span", [_vm._v("+ $2.50")])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "add_to_basket",
+                                  attrs: { href: "#0" }
+                                },
+                                [_vm._v("Add to cart")]
+                              )
+                            ])
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [
+                        _c("figure", { staticClass: "thumb_menu_list" }, [
+                          _c("img", {
+                            attrs: {
+                              src: "img/menu-thumb-16.jpg",
+                              alt: "thumb"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [_vm._v("16. Mexican Burger")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                                    Fuisset mentitum deleniti sit ea.\n                                "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_c("strong", [_vm._v("€ 8,30")])]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "options" }, [
+                        _c(
+                          "div",
+                          { staticClass: "dropdown dropdown-options" },
+                          [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-toggle",
+                                attrs: {
+                                  href: "#",
+                                  "data-toggle": "dropdown",
+                                  "aria-expanded": "true"
+                                }
+                              },
+                              [_c("i", { staticClass: "icon_plus_alt2" })]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "dropdown-menu" }, [
+                              _c("h5", [_vm._v("Select an option")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option1",
+                                    name: "options_14",
+                                    checked: ""
+                                  }
+                                }),
+                                _vm._v("Medium "),
+                                _c("span", [_vm._v("+ $3.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option2",
+                                    name: "options_14"
+                                  }
+                                }),
+                                _vm._v("Large "),
+                                _c("span", [_vm._v("+ $5.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: {
+                                    type: "radio",
+                                    value: "option3",
+                                    name: "options_14"
+                                  }
+                                }),
+                                _vm._v("Extra Large "),
+                                _c("span", [_vm._v("+ $8.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("h5", [_vm._v("Add ingredients")]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Tomato "),
+                                _c("span", [_vm._v("+ $4.30")])
+                              ]),
+                              _vm._v(" "),
+                              _c("label", [
+                                _c("input", {
+                                  attrs: { type: "checkbox", value: "" }
+                                }),
+                                _vm._v("Extra Peppers "),
+                                _c("span", [_vm._v("+ $2.50")])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "add_to_basket",
+                                  attrs: { href: "#0" }
+                                },
+                                [_vm._v("Add to cart")]
+                              )
+                            ])
+                          ]
+                        )
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("hr"),
+                _vm._v(" "),
+                _c("h3", { attrs: { id: "desserts" } }, [_vm._v("Desserts")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "\n                    Te ferri iisque aliquando pro, posse nonumes efficiantur in cum. Sensibus reprimique eu pro. Fuisset mentitum deleniti sit ea.\n                "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("table", { staticClass: "table table-striped cart-list " }, [
+                  _c("thead", [
+                    _c("tr", [
+                      _c("th", [
+                        _vm._v(
+                          "\n                                Item\n                            "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("th", [
+                        _vm._v(
+                          "\n                                Price\n                            "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("th", [
+                        _vm._v(
+                          "\n                                Order\n                            "
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tbody", [
+                    _c("tr", [
+                      _c("td", [
+                        _c("figure", { staticClass: "thumb_menu_list" }, [
+                          _c("img", {
+                            attrs: {
+                              src: "img/menu-thumb-17.jpg",
+                              alt: "thumb"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [_vm._v("17. Chocolate Fudge Cake")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                                    Fuisset mentitum deleniti sit ea.\n                                "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_c("strong", [_vm._v("€ 24,71")])]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "options" }, [
+                        _c("a", { attrs: { href: "#0" } }, [
+                          _c("i", { staticClass: "icon_plus_alt2" })
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [
+                        _c("figure", { staticClass: "thumb_menu_list" }, [
+                          _c("img", {
+                            attrs: {
+                              src: "img/menu-thumb-18.jpg",
+                              alt: "thumb"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [_vm._v("18. Cheesecake")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                                    Fuisset mentitum deleniti sit ea.\n                                "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_c("strong", [_vm._v("€ 7,50")])]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "options" }, [
+                        _c("a", { attrs: { href: "#0" } }, [
+                          _c("i", { staticClass: "icon_plus_alt2" })
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [
+                        _c("figure", { staticClass: "thumb_menu_list" }, [
+                          _c("img", {
+                            attrs: {
+                              src: "img/menu-thumb-19.jpg",
+                              alt: "thumb"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [_vm._v("19. Apple Pie & Custard")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                                    Fuisset mentitum deleniti sit ea.\n                                "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_c("strong", [_vm._v("€ 9,70")])]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "options" }, [
+                        _c("a", { attrs: { href: "#0" } }, [
+                          _c("i", { staticClass: "icon_plus_alt2" })
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [
+                        _c("figure", { staticClass: "thumb_menu_list" }, [
+                          _c("img", {
+                            attrs: {
+                              src: "img/menu-thumb-20.jpg",
+                              alt: "thumb"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [_vm._v("20. Profiteroles")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                                    Fuisset mentitum deleniti sit ea.\n                                "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_c("strong", [_vm._v("€ 12,00")])]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "options" }, [
+                        _c("a", { attrs: { href: "#0" } }, [
+                          _c("i", { staticClass: "icon_plus_alt2" })
+                        ])
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("hr"),
+                _vm._v(" "),
+                _c("h3", { attrs: { id: "drinks" } }, [_vm._v("Drinks")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "\n                    Te ferri iisque aliquando pro, posse nonumes efficiantur in cum. Sensibus reprimique eu pro. Fuisset mentitum deleniti sit ea.\n                "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("table", { staticClass: "table table-striped cart-list " }, [
+                  _c("thead", [
+                    _c("tr", [
+                      _c("th", [
+                        _vm._v(
+                          "\n                                Item\n                            "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("th", [
+                        _vm._v(
+                          "\n                                Price\n                            "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("th", [
+                        _vm._v(
+                          "\n                                Order\n                            "
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tbody", [
+                    _c("tr", [
+                      _c("td", [
+                        _c("figure", { staticClass: "thumb_menu_list" }, [
+                          _c("img", {
+                            attrs: {
+                              src: "img/menu-thumb-21.jpg",
+                              alt: "thumb"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [_vm._v("21. Coke 0.33L")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                                    Fuisset mentitum deleniti sit ea.\n                                "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_c("strong", [_vm._v("€ 5,70")])]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "options" }, [
+                        _c("a", { attrs: { href: "#0" } }, [
+                          _c("i", { staticClass: "icon_plus_alt2" })
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [
+                        _c("figure", { staticClass: "thumb_menu_list" }, [
+                          _c("img", {
+                            attrs: {
+                              src: "img/menu-thumb-22.jpg",
+                              alt: "thumb"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [_vm._v("2. Diet Coke 0.33L")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                                    Fuisset mentitum deleniti sit ea.\n                                "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_c("strong", [_vm._v("€ 2,70")])]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "options" }, [
+                        _c("a", { attrs: { href: "#0" } }, [
+                          _c("i", { staticClass: "icon_plus_alt2" })
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [
+                        _c("figure", { staticClass: "thumb_menu_list" }, [
+                          _c("img", {
+                            attrs: {
+                              src: "img/menu-thumb-23.jpg",
+                              alt: "thumb"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [_vm._v("3. Diet Coke 1L")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                                    Fuisset mentitum deleniti sit ea.\n                                "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_c("strong", [_vm._v("€ 5,70")])]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "options" }, [
+                        _c("a", { attrs: { href: "#0" } }, [
+                          _c("i", { staticClass: "icon_plus_alt2" })
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [
+                        _c("figure", { staticClass: "thumb_menu_list" }, [
+                          _c("img", {
+                            attrs: {
+                              src: "img/menu-thumb-24.jpg",
+                              alt: "thumb"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", [_vm._v("4. Fanta Orange 0.33L")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                                    Fuisset mentitum deleniti sit ea.\n                                "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_c("strong", [_vm._v("€ 2,70")])]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "options" }, [
+                        _c("a", { attrs: { href: "#0" } }, [
+                          _c("i", { staticClass: "icon_plus_alt2" })
+                        ])
+                      ])
+                    ])
+                  ])
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-3", attrs: { id: "sidebar" } }, [
+            _c("div", { staticClass: "theiaStickySidebar" }, [
+              _c("div", { attrs: { id: "cart_box" } }, [
+                _c("h3", [
+                  _vm._v("Your order "),
+                  _c("i", { staticClass: "icon_cart_alt float-right" })
+                ]),
+                _vm._v(" "),
+                _c("table", { staticClass: "table table_summary" }, [
+                  _c("tbody", [
+                    _c("tr", [
+                      _c("td", [
+                        _c(
+                          "a",
+                          { staticClass: "remove_item", attrs: { href: "#0" } },
+                          [_c("i", { staticClass: "icon_minus_alt" })]
+                        ),
+                        _vm._v(" "),
+                        _c("strong", [_vm._v("1x")]),
+                        _vm._v(" Enchiladas\n                                ")
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c("strong", { staticClass: "float-right" }, [
+                          _vm._v("$11")
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [
+                        _c(
+                          "a",
+                          { staticClass: "remove_item", attrs: { href: "#0" } },
+                          [_c("i", { staticClass: "icon_minus_alt" })]
+                        ),
+                        _vm._v(" "),
+                        _c("strong", [_vm._v("2x")]),
+                        _vm._v(" Burrito\n                                ")
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c("strong", { staticClass: "float-right" }, [
+                          _vm._v("$14")
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [
+                        _c(
+                          "a",
+                          { staticClass: "remove_item", attrs: { href: "#0" } },
+                          [_c("i", { staticClass: "icon_minus_alt" })]
+                        ),
+                        _vm._v(" "),
+                        _c("strong", [_vm._v("1x")]),
+                        _vm._v(" Chicken\n                                ")
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c("strong", { staticClass: "float-right" }, [
+                          _vm._v("$20")
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [
+                        _c(
+                          "a",
+                          { staticClass: "remove_item", attrs: { href: "#0" } },
+                          [_c("i", { staticClass: "icon_minus_alt" })]
+                        ),
+                        _vm._v(" "),
+                        _c("strong", [_vm._v("2x")]),
+                        _vm._v(" Corona Beer\n                                ")
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c("strong", { staticClass: "float-right" }, [
+                          _vm._v("$9")
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [
+                        _c(
+                          "a",
+                          { staticClass: "remove_item", attrs: { href: "#0" } },
+                          [_c("i", { staticClass: "icon_minus_alt" })]
+                        ),
+                        _vm._v(" "),
+                        _c("strong", [_vm._v("2x")]),
+                        _vm._v(" Cheese Cake\n                                ")
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c("strong", { staticClass: "float-right" }, [
+                          _vm._v("$12")
+                        ])
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("hr"),
+                _vm._v(" "),
+                _c("div", { staticClass: "row", attrs: { id: "options_2" } }, [
+                  _c(
+                    "div",
+                    { staticClass: "col-xl-6 col-md-12 col-sm-12 col-6" },
+                    [
+                      _c("label", [
+                        _c("input", {
+                          staticClass: "icheck",
+                          attrs: {
+                            type: "radio",
+                            value: "",
+                            checked: "",
+                            name: "option_2"
+                          }
+                        }),
+                        _vm._v("Delivery")
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-xl-6 col-md-12 col-sm-12 col-6" },
+                    [
+                      _c("label", [
+                        _c("input", {
+                          staticClass: "icheck",
+                          attrs: { type: "radio", value: "", name: "option_2" }
+                        }),
+                        _vm._v("Take Away")
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("hr"),
+                _vm._v(" "),
+                _c("table", { staticClass: "table table_summary" }, [
+                  _c("tbody", [
+                    _c("tr", [
+                      _c("td", [
+                        _vm._v(
+                          "\n                                    Subtotal "
+                        ),
+                        _c("span", { staticClass: "float-right" }, [
+                          _vm._v("$56")
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [
+                        _vm._v(
+                          "\n                                    Delivery fee "
+                        ),
+                        _c("span", { staticClass: "float-right" }, [
+                          _vm._v("$10")
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", { staticClass: "total" }, [
+                        _vm._v("\n                                    TOTAL "),
+                        _c("span", { staticClass: "float-right" }, [
+                          _vm._v("$66")
+                        ])
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("hr"),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  { staticClass: "btn_full", attrs: { href: "cart.html" } },
+                  [_vm._v("Order now")]
+                )
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/HomeFront/View/Register.vue?vue&type=template&id=cd05f7ee&":
+/*!*********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/HomeFront/View/Register.vue?vue&type=template&id=cd05f7ee& ***!
+  \*********************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("div", {}, [
+        _c("div", { staticClass: "center" }, [
+          _c("div", { staticClass: "container-fluid" }, [
+            _c(
+              "form",
+              {
+                staticClass: "popup-form",
+                staticStyle: {
+                  padding: "5px",
+                  background: "grey",
+                  "border-radius": "10px"
+                },
+                attrs: { action: "#", id: "myRegister" }
+              },
+              [
+                _c("div", { staticClass: "login_icon text-center" }, [
+                  _c("i", { staticClass: "icon_lock_alt" })
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "form-control form-white",
+                  staticStyle: { "border-radius": "10px" },
+                  attrs: { type: "text", placeholder: "Name" }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "form-control form-white",
+                  staticStyle: { "border-radius": "10px" },
+                  attrs: { type: "text", placeholder: "Last Name" }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "form-control form-white",
+                  staticStyle: { "border-radius": "10px" },
+                  attrs: { type: "email", placeholder: "Email" }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "form-control form-white",
+                  staticStyle: { "border-radius": "10px" },
+                  attrs: {
+                    type: "text",
+                    placeholder: "Password",
+                    id: "password1"
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "form-control form-white",
+                  staticStyle: { "border-radius": "10px" },
+                  attrs: {
+                    type: "text",
+                    placeholder: "Confirm password",
+                    id: "password2"
+                  }
+                }),
+                _vm._v(" "),
+                _c("div", {
+                  staticClass: "clearfix",
+                  attrs: { id: "pass-info" }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "checkbox-holder text-left" }, [
+                  _c("div", { staticClass: "checkbox" }, [
+                    _c("input", {
+                      attrs: {
+                        type: "checkbox",
+                        value: "accept_2",
+                        id: "check_2",
+                        name: "check_2"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "check_2" } }, [
+                      _c("span", [
+                        _vm._v("I Agree to the "),
+                        _c("strong", [_vm._v("Terms & Conditions")])
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  { staticClass: "btn btn-submit", attrs: { type: "submit" } },
+                  [_vm._v("Register")]
+                )
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/HomeFront/View/Restuarant.vue?vue&type=template&id=0811927b&":
+/*!***********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/HomeFront/View/Restuarant.vue?vue&type=template&id=0811927b& ***!
+  \***********************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _vm._m(1),
+    _vm._v(" "),
+    _c("div", { staticClass: "container margin_60_35" }, [
+      _c("div", { staticClass: "row" }, [
+        _vm._m(2),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-9" }, [
+          _vm._m(3),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "strip_list wow fadeIn",
+              attrs: { "data-wow-delay": "0.1s" }
+            },
+            [
+              _c("div", { staticClass: "ribbon_1" }, [
+                _vm._v("\n\t\t\t\t\tPopular\n\t\t\t\t")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _vm._m(4),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-3" }, [
+                  _c("div", { staticClass: "go_to" }, [
+                    _c("div", [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "btn_1",
+                          attrs: { href: "/restuarant/detail" }
+                        },
+                        [_vm._v("View Menu")]
+                      )
+                    ])
+                  ])
+                ])
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass: "load_more_bt wow fadeIn",
+              attrs: { href: "#0", "data-wow-delay": "0.2s" }
+            },
+            [_vm._v("Load more...")]
+          )
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { attrs: { id: "position" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("ul", [
+          _c("li", [_c("a", { attrs: { href: "#0" } }, [_vm._v("Home")])]),
+          _vm._v(" "),
+          _c("li", [_c("a", { attrs: { href: "#0" } }, [_vm._v("Category")])]),
+          _vm._v(" "),
+          _c("li", [_vm._v("Page active")])
+        ]),
+        _vm._v(" "),
+        _c(
+          "a",
+          { staticClass: "search-overlay-menu-btn", attrs: { href: "#0" } },
+          [_c("i", { staticClass: "icon-search-6" }), _vm._v(" Search")]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "collapse", attrs: { id: "collapseMap" } },
+      [_c("div", { staticClass: "map", attrs: { id: "map" } })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-lg-3" }, [
+      _c("p", [
+        _c("a", { staticClass: "btn_map" }, [_vm._v("Choose what you like")])
+      ]),
+      _vm._v(" "),
+      _c("div", { attrs: { id: "filters_col" } }, [
+        _c(
+          "a",
+          {
+            attrs: {
+              "data-toggle": "collapse",
+              href: "#collapseFilters",
+              "aria-expanded": "false",
+              "aria-controls": "collapseFilters",
+              id: "filters_col_bt"
+            }
+          },
+          [
+            _vm._v("Filters "),
+            _c("i", { staticClass: "icon-plus-1 float-right" })
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "collapse show", attrs: { id: "collapseFilters" } },
+          [
+            _c("div", { staticClass: "filter_type" }, [
+              _c("h6", [_vm._v("Type")]),
+              _vm._v(" "),
+              _c("ul", [
+                _c("li", [
+                  _c("label", [
+                    _c("input", {
+                      staticClass: "icheck",
+                      attrs: { type: "checkbox", checked: "" }
+                    }),
+                    _vm._v("All "),
+                    _c("small", [_vm._v("(49)")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("label", [
+                    _c("input", {
+                      staticClass: "icheck",
+                      attrs: { type: "checkbox" }
+                    }),
+                    _vm._v("American "),
+                    _c("small", [_vm._v("(12)")])
+                  ]),
+                  _c("i", { staticClass: "color_1" })
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("label", [
+                    _c("input", {
+                      staticClass: "icheck",
+                      attrs: { type: "checkbox" }
+                    }),
+                    _vm._v("Chinese "),
+                    _c("small", [_vm._v("(5)")])
+                  ]),
+                  _c("i", { staticClass: "color_2" })
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "filter_type" }, [
+              _c("h6", [_vm._v("Rating")]),
+              _vm._v(" "),
+              _c("ul", [
+                _c("li", [
+                  _c("label", [
+                    _c("input", {
+                      staticClass: "icheck",
+                      attrs: { type: "checkbox" }
+                    }),
+                    _c("span", { staticClass: "rating" }, [
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star voted" }),
+                      _c("i", { staticClass: "icon_star voted" })
+                    ])
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "filter_type" }, [
+              _c("h6", [_vm._v("Options")]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "nomargin" }, [
+                _c("li", [
+                  _c("label", [
+                    _c("input", {
+                      staticClass: "icheck",
+                      attrs: { type: "checkbox" }
+                    }),
+                    _vm._v("Delivery")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("label", [
+                    _c("input", {
+                      staticClass: "icheck",
+                      attrs: { type: "checkbox" }
+                    }),
+                    _vm._v("Take Away")
+                  ])
+                ])
+              ])
+            ])
+          ]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { attrs: { id: "tools" } }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-3 col-sm-4 col-5" }, [
+          _c("div", { staticClass: "styled-select" }, [
+            _c(
+              "select",
+              { attrs: { name: "sort_rating", id: "sort_rating" } },
+              [
+                _c("option", { attrs: { value: "", selected: "" } }, [
+                  _vm._v("Sort by ranking")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "lower" } }, [
+                  _vm._v("Lowest ranking")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "higher" } }, [
+                  _vm._v("Highest ranking")
+                ])
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-9" }, [
+      _c("div", { staticClass: "desc" }, [
+        _c("div", { staticClass: "thumb_strip" }, [
+          _c("a", { attrs: { href: "detail_page.html" } }, [
+            _c("img", { attrs: { src: "img/thumb_restaurant.jpg", alt: "" } })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "rating" }, [
+          _c("i", { staticClass: "icon_star voted" }),
+          _c("i", { staticClass: "icon_star voted" }),
+          _c("i", { staticClass: "icon_star voted" }),
+          _c("i", { staticClass: "icon_star voted" }),
+          _c("i", { staticClass: "icon_star" }),
+          _vm._v(" ("),
+          _c("small", [
+            _c("a", { attrs: { href: "#0" } }, [_vm._v("98 reviews")])
+          ]),
+          _vm._v(")\n\t\t\t\t\t\t\t")
+        ]),
+        _vm._v(" "),
+        _c("h3", [_vm._v("Taco Mexican")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "type" }, [
+          _vm._v("\n\t\t\t\t\t\t\t\tMexican / American\n\t\t\t\t\t\t\t")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "location" }, [
+          _vm._v("\n\t\t\t\t\t\t\t\t135 Newtownards Road, Belfast, BT4. "),
+          _c("span", { staticClass: "opening" }, [_vm._v("Opens at 17:00.")]),
+          _vm._v(" Minimum order: $15\n\t\t\t\t\t\t\t")
+        ]),
+        _vm._v(" "),
+        _c("ul", [
+          _c("li", [
+            _vm._v("Take away"),
+            _c("i", { staticClass: "icon_check_alt2 ok" })
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _vm._v("Delivery"),
+            _c("i", { staticClass: "icon_check_alt2 no" })
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/HomeFront/View/index.vue?vue&type=template&id=2124e8fc&":
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/HomeFront/View/index.vue?vue&type=template&id=2124e8fc& ***!
+  \******************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -41079,7 +45536,7 @@ var staticRenderFns = [
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-md-3" }, [
+          _c("div", { staticClass: "col-md-4" }, [
             _c("h3", [_vm._v("About")]),
             _vm._v(" "),
             _c("ul", [
@@ -41133,7 +45590,7 @@ var staticRenderFns = [
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-md-3", attrs: { id: "newsletter" } }, [
+          _c("div", { staticClass: "col-md-4", attrs: { id: "newsletter" } }, [
             _c("h3", [_vm._v("Newsletter")]),
             _vm._v(" "),
             _c("p", [
@@ -41178,44 +45635,6 @@ var staticRenderFns = [
                 })
               ]
             )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-2" }, [
-            _c("h3", [_vm._v("Settings")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "styled-select" }, [
-              _c("select", { attrs: { name: "lang", id: "lang" } }, [
-                _c("option", { attrs: { value: "English", selected: "" } }, [
-                  _vm._v("English")
-                ]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "French" } }, [
-                  _vm._v("French")
-                ]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "Spanish" } }, [
-                  _vm._v("Spanish")
-                ]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "Russian" } }, [
-                  _vm._v("Russian")
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "styled-select" }, [
-              _c("select", { attrs: { name: "currency", id: "currency" } }, [
-                _c("option", { attrs: { value: "USD", selected: "" } }, [
-                  _vm._v("USD")
-                ]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "EUR" } }, [_vm._v("EUR")]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "GBP" } }, [_vm._v("GBP")]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "RUB" } }, [_vm._v("RUB")])
-              ])
-            ])
           ])
         ]),
         _vm._v(" "),
@@ -41284,10 +45703,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/Include/HowWork.vue?vue&type=template&id=0e3052fb&":
-/*!*************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/Include/HowWork.vue?vue&type=template&id=0e3052fb& ***!
-  \*************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/Include/HeaderRestuarantDetail.vue?vue&type=template&id=6b363e69&":
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/Include/HeaderRestuarantDetail.vue?vue&type=template&id=6b363e69& ***!
+  \****************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -41307,85 +45726,55 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container margin_60" }, [
-      _c("div", { staticClass: "main_title" }, [
-        _c("h2", { staticClass: "nomargin_top" }, [_vm._v("How it works")]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "\n            Cum doctus civibus efficiantur in imperdiet deterruisset.\n        "
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-3 col-md-6" }, [
-          _c("div", { staticClass: "box_home", attrs: { id: "one" } }, [
-            _c("span", [_vm._v("1")]),
+    return _c(
+      "section",
+      {
+        staticClass: "parallax-window",
+        attrs: {
+          "data-parallax": "scroll",
+          "data-image-src": "/assets/img/sub_header_2.jpg",
+          "data-natural-width": "1400",
+          "data-natural-height": "470"
+        }
+      },
+      [
+        _c("div", { attrs: { id: "subheader" } }, [
+          _c("div", { attrs: { id: "sub_content" } }, [
+            _c("div", { attrs: { id: "thumb" } }, [
+              _c("img", {
+                attrs: { src: "/assets/img/thumb_restaurant.jpg", alt: "" }
+              })
+            ]),
             _vm._v(" "),
-            _c("h3", [_vm._v("Search by address")]),
+            _c("div", { staticClass: "rating" }, [
+              _c("i", { staticClass: "icon_star voted" }),
+              _c("i", { staticClass: "icon_star voted" }),
+              _c("i", { staticClass: "icon_star voted" }),
+              _c("i", { staticClass: "icon_star voted" }),
+              _c("i", { staticClass: "icon_star" }),
+              _vm._v(" ("),
+              _c("small", [
+                _c("a", { attrs: { href: "detail_page_2.html" } }, [
+                  _vm._v("Read 98 reviews")
+                ])
+              ]),
+              _vm._v(")")
+            ]),
             _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "\n                    Find all restaurants available in your zone.\n                "
-              )
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-3 col-md-6" }, [
-          _c("div", { staticClass: "box_home", attrs: { id: "two" } }, [
-            _c("span", [_vm._v("2")]),
+            _c("h1", [_vm._v("Mexican TacoMex")]),
             _vm._v(" "),
-            _c("h3", [_vm._v("Choose a restaurant")]),
+            _c("div", [_c("em", [_vm._v("Mexican / American")])]),
             _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "\n                    We have more than 1000s of menus online.\n                "
-              )
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-3 col-md-6" }, [
-          _c("div", { staticClass: "box_home", attrs: { id: "three" } }, [
-            _c("span", [_vm._v("3")]),
-            _vm._v(" "),
-            _c("h3", [_vm._v("Pay by card or cash")]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "\n                    It's quick, easy and totally secure.\n                "
-              )
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-3 col-md-6" }, [
-          _c("div", { staticClass: "box_home", attrs: { id: "four" } }, [
-            _c("span", [_vm._v("4")]),
-            _vm._v(" "),
-            _c("h3", [_vm._v("Delivery - Takeaway")]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "\n                    You are lazy? Are you backing home?\n                "
-              )
+            _c("div", [
+              _c("i", { staticClass: "icon_pin" }),
+              _vm._v(" 135 Newtownards Road, Belfast, BT4 1AB - "),
+              _c("strong", [_vm._v("Delivery charge:")]),
+              _vm._v(" $10, free over $15.")
             ])
           ])
         ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "d-none d-sm-block", attrs: { id: "delivery_time" } },
-        [
-          _c("strong", [_c("span", [_vm._v("2")]), _c("span", [_vm._v("5")])]),
-          _vm._v(" "),
-          _c("h4", [_vm._v("The minutes that usually takes to deliver!")])
-        ]
-      )
-    ])
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -41431,9 +45820,13 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _vm._m(4),
+              _c("li", [
+                _c("a", { attrs: { href: "/about_us" } }, [_vm._v("About us")])
+              ]),
               _vm._v(" "),
-              _vm._m(5)
+              _c("li", [
+                _c("a", { attrs: { href: "/login" } }, [_vm._v("Login")])
+              ])
             ])
           ])
         ])
@@ -41507,32 +45900,6 @@ var staticRenderFns = [
       { staticClass: "open_close", attrs: { href: "#", id: "close_in" } },
       [_c("i", { staticClass: "icon_close" })]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("a", { attrs: { href: "about.html" } }, [_vm._v("About us")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c(
-        "a",
-        {
-          attrs: {
-            href: "#0",
-            "data-toggle": "modal",
-            "data-target": "#login_2"
-          }
-        },
-        [_vm._v("Login")]
-      )
-    ])
   }
 ]
 render._withStripped = true
@@ -41564,68 +45931,265 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "header-video" }, [
-      _c("div", { attrs: { id: "hero_video" } }, [
-        _c("div", { attrs: { id: "sub_content" } }, [
-          _c("h1", [_vm._v("Order Takeaway or Delivery Food")]),
+    return _c("div", [
+      _c("section", { staticClass: "header-video" }, [
+        _c("div", { attrs: { id: "hero_video" } }, [
+          _c("div", { attrs: { id: "sub_content" } }, [
+            _c("h1", [_vm._v("Order Takeaway or Delivery Food")]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "\n            Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.\n        "
+              )
+            ]),
+            _vm._v(" "),
+            _c(
+              "form",
+              { attrs: { method: "post", action: "list_page.html" } },
+              [
+                _c("div", { attrs: { id: "custom-search-input" } }, [
+                  _c("div", { staticClass: "input-group" }, [
+                    _c("input", {
+                      staticClass: " search-query",
+                      attrs: {
+                        type: "text",
+                        placeholder: "Your Address or postal code"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "input-group-btn" }, [
+                      _c("input", {
+                        staticClass: "btn_search",
+                        attrs: { type: "submit", value: "" }
+                      })
+                    ])
+                  ])
+                ])
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("img", {
+          staticClass: "header-video--media",
+          attrs: {
+            src: "/assets/img/video_fix.png",
+            alt: "",
+            "data-video-src": "",
+            "data-teaser-source": "/assets/video/intro",
+            "data-provider": "",
+            "data-video-width": "1920",
+            "data-video-height": "960"
+          }
+        }),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "d-none d-md-block", attrs: { id: "count" } },
+          [
+            _c("ul", [
+              _c("li", [
+                _c("span", { staticClass: "number" }, [_vm._v("2650")]),
+                _vm._v(" Restaurant")
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "number" }, [_vm._v("5350")]),
+                _vm._v(" People Served")
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("span", { staticClass: "number" }, [_vm._v("12350")]),
+                _vm._v(" Registered Users")
+              ])
+            ])
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "container margin_60" }, [
+        _c("div", { staticClass: "main_title" }, [
+          _c("h2", { staticClass: "nomargin_top" }, [_vm._v("How it works")]),
           _vm._v(" "),
           _c("p", [
             _vm._v(
-              "\n            Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.\n        "
+              "\n            Cum doctus civibus efficiantur in imperdiet deterruisset.\n        "
             )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-lg-3 col-md-6" }, [
+            _c("div", { staticClass: "box_home", attrs: { id: "one" } }, [
+              _c("span", [_vm._v("1")]),
+              _vm._v(" "),
+              _c("h3", [_vm._v("Search by address")]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n                    Find all restaurants available in your zone.\n                "
+                )
+              ])
+            ])
           ]),
           _vm._v(" "),
-          _c("form", { attrs: { method: "post", action: "list_page.html" } }, [
-            _c("div", { attrs: { id: "custom-search-input" } }, [
-              _c("div", { staticClass: "input-group" }, [
-                _c("input", {
-                  staticClass: " search-query",
-                  attrs: {
-                    type: "text",
-                    placeholder: "Your Address or postal code"
-                  }
-                }),
-                _vm._v(" "),
-                _c("span", { staticClass: "input-group-btn" }, [
-                  _c("input", {
-                    staticClass: "btn_search",
-                    attrs: { type: "submit", value: "" }
-                  })
-                ])
+          _c("div", { staticClass: "col-lg-3 col-md-6" }, [
+            _c("div", { staticClass: "box_home", attrs: { id: "two" } }, [
+              _c("span", [_vm._v("2")]),
+              _vm._v(" "),
+              _c("h3", [_vm._v("Choose a restaurant")]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n                    We have more than 1000s of menus online.\n                "
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-3 col-md-6" }, [
+            _c("div", { staticClass: "box_home", attrs: { id: "three" } }, [
+              _c("span", [_vm._v("3")]),
+              _vm._v(" "),
+              _c("h3", [_vm._v("Pay by card or cash")]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n                    It's quick, easy and totally secure.\n                "
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-3 col-md-6" }, [
+            _c("div", { staticClass: "box_home", attrs: { id: "four" } }, [
+              _c("span", [_vm._v("4")]),
+              _vm._v(" "),
+              _c("h3", [_vm._v("Delivery - Takeaway")]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n                    You are lazy? Are you backing home?\n                "
+                )
               ])
             ])
           ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("img", {
-        staticClass: "header-video--media",
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "d-none d-sm-block", attrs: { id: "delivery_time" } },
+          [
+            _c("strong", [
+              _c("span", [_vm._v("2")]),
+              _c("span", [_vm._v("5")])
+            ]),
+            _vm._v(" "),
+            _c("h4", [_vm._v("The minutes that usually takes to deliver!")])
+          ]
+        )
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/Include/SubHeaderRestuarant.vue?vue&type=template&id=f19f3348&":
+/*!*************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/Include/SubHeaderRestuarant.vue?vue&type=template&id=f19f3348& ***!
+  \*************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "section",
+      {
+        staticClass: "parallax-window",
         attrs: {
-          src: "/assets/img/video_fix.png",
-          alt: "",
-          "data-video-src": "",
-          "data-teaser-source": "/assets/video/intro",
-          "data-provider": "",
-          "data-video-width": "1920",
-          "data-video-height": "960"
+          id: "short",
+          "data-parallax": "scroll",
+          "data-image-src": "/assets/img/sub_header_short.jpg",
+          "data-natural-width": "1400",
+          "data-natural-height": "350"
         }
-      }),
-      _vm._v(" "),
-      _c("div", { staticClass: "d-none d-md-block", attrs: { id: "count" } }, [
-        _c("ul", [
-          _c("li", [
-            _c("span", { staticClass: "number" }, [_vm._v("2650")]),
-            _vm._v(" Restaurant")
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("span", { staticClass: "number" }, [_vm._v("5350")]),
-            _vm._v(" People Served")
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("span", { staticClass: "number" }, [_vm._v("12350")]),
-            _vm._v(" Registered Users")
+      },
+      [
+        _c("div", { attrs: { id: "subheader" } }, [
+          _c(
+            "div",
+            { staticClass: "animated zoomIn", attrs: { id: "sub_content" } },
+            [
+              _c("h1", [_vm._v("24 results in your zone")]),
+              _vm._v(" "),
+              _c("div", [
+                _c("i", { staticClass: "icon_pin" }),
+                _vm._v(" 135 Newtownards Road, Belfast, BT4 1AB")
+              ])
+            ]
+          )
+        ])
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/Vender/Dashboard/View/view.vue?vue&type=template&id=d4074134&":
+/*!************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Frontend/Vender/Dashboard/View/view.vue?vue&type=template&id=d4074134& ***!
+  \************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("a", { attrs: { href: "" } }, [_vm._v("Dashboard")]),
+            _vm._v(" "),
+            _c("a", { attrs: { href: "" } }, [_vm._v("Product")]),
+            _vm._v(" "),
+            _c("a", { attrs: { href: "" } }, [_vm._v("Menu")])
           ])
         ])
       ])

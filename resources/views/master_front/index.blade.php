@@ -29,6 +29,12 @@
 	<link href="/assets/css/fontello/css/fontello.min.css" rel="stylesheet">
 	<link href="/assets/css/magnific-popup.css" rel="stylesheet">
 	<link href="/assets/css/pop_up.css" rel="stylesheet">
+
+    <!-- SPECIFIC CSS -->
+	<link href="/assets/css/skins/square/grey.css" rel="stylesheet">
+	<link href="/assets/css/admin.css" rel="stylesheet">
+	<link href="/assets/js/editor/summernote-bs4.css" rel="stylesheet">
+	<link href="/assets/css/dropzone.css" rel="stylesheet">
 	
 	<!-- YOUR CUSTOM CSS -->
 	<link href="/assets/css/custom.css" rel="stylesheet">
@@ -64,6 +70,8 @@
 
 <!-- SPECIFIC SCRIPTS -->
 <script src="/assets/js/video_header.js"></script>
+<script src="/assets/js/infobox.js"></script>
+<script src="/assets/js/ion.rangeSlider.js"></script>
 <script>
 $(document).ready(function() {
 	'use strict';

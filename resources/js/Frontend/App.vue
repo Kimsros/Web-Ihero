@@ -1,8 +1,9 @@
 <template>
   <div>
     <Navbar/>
-    <SubHeader/>
-    <HowItWork/>
+    <SubHeaderHome v-if="this.$router.currentRoute.name=='home'"/>
+    <SubHeaderRestuarant v-if="this.$router.currentRoute.name!='home' && this.$router.currentRoute.name!='/restuarant_detail'"/>
+    <HeaderRestuarantDetail v-if="this.$router.currentRoute.name=='/restuarant_detail'"/>
     <router-view></router-view> 
     <Footer/>
   </div>
@@ -10,16 +11,26 @@
 
 <script>
 import Navbar from "./Include/Navbar.vue";
-import SubHeader from "./Include/SubHeader.vue";
-import HowItWork from "./Include/HowWork.vue";
+import SubHeaderHome from "./Include/SubHeader.vue";
 import Footer from "./Include/Footer.vue";
+import SubHeaderRestuarant from "./Include/SubHeaderRestuarant.vue";
+import HeaderRestuarantDetail from "./Include/HeaderRestuarantDetail.vue";
 export default {
+  data(){
+    return{
+      data:null,
+    };
+  },
   name: "App",
   components:{
     Navbar,
-    SubHeader,
-    HowItWork,
+    SubHeaderHome,
+    SubHeaderRestuarant,
+    HeaderRestuarantDetail,
     Footer
+  },
+  mounted(){
+    console.log(this.$router.currentRoute.path);
   }
   
 };
