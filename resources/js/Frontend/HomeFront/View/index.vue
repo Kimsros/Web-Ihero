@@ -4,6 +4,7 @@
         <div class="container margin_60">
             <div class="main_title">
                 <h2 class="nomargin_top">Choose from Most Popular</h2>
+                <vs-button>Hello World</vs-button>
                 <p>
                     Cum doctus civibus efficiantur in imperdiet deterruisset.
                 </p>
@@ -172,8 +173,10 @@
             <h2 class="nomargin_top">Work with Us</h2>
             <p>
                 Cum doctus civibus efficiantur in imperdiet deterruisset.
+                
             </p>
         </div>
+        
         <div class="row justify-content-center">
             <div class="col-md-5">
                 <a class="box_work" href="submit_restaurant.html">

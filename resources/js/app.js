@@ -9,6 +9,12 @@ require('./bootstrap');
 window.Vue = require('vue').default;
 import router from './Router.js';
 import store from './store';
+import vuesax from "vuesax";
+import Vue from 'vue';
+import 'vuesax/dist/vuesax.css';
+import 'material-icons/iconfont/material-icons.css';
+Vue.use(vuesax);
+
 
 /**
  * The following block of code may be used to automatically register your

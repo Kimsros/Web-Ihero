@@ -7,7 +7,9 @@ import VenderProduct from "./Product/router.js";
 import VenderReport from "./Report/router.js";
 import VenderStaff from "./Staff/router.js";
 import Dashboard from "./Dashboard/router.js";
-const routes=[...VencerDeliveryConfig.router,...VenderDelivery.router,...VenderMenu.router,...VenderOrder.router,...VenderPayment.router,...VenderProduct.router,...VenderReport.router,...VenderStaff.router,...Dashboard.router];
+import Categories from "./Categoies/router.js";
+import Attribute from "./Attribute/router.js";
+const routes=[...VencerDeliveryConfig.router,...VenderDelivery.router,...VenderMenu.router,...VenderOrder.router,...VenderPayment.router,...VenderProduct.router,...VenderReport.router,...VenderStaff.router,...Dashboard.router,...Categories.router,...Attribute.router];
 export default{
     router:routes
 }
