@@ -3762,7 +3762,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3897,6 +3896,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3926,6 +3935,37 @@ __webpack_require__.r(__webpack_exports__);
           _this.data = respon.data.success;
         });
       }
+    },
+    Destroy: function Destroy(id) {
+      var _this2 = this;
+
+      this.$swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then(function (result) {
+        if (result.isConfirmed) {
+          axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/vender/product/destroy/' + id).then(function (respon) {
+            if (respon.data.success) {
+              _this2.$swal.fire({
+                toast: true,
+                position: 'bottom-end',
+                title: respon.data.success,
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 3000,
+                titleColor: "#FFF"
+              });
+
+              _this2.index();
+            }
+          });
+        }
+      });
     }
   }
 });
@@ -5100,7 +5140,8 @@ __webpack_require__.r(__webpack_exports__);
     props: true
   }, {
     path: "/vender/product/edit/:id?",
-    component: _View_AddEditProduct_vue__WEBPACK_IMPORTED_MODULE_1__.default
+    component: _View_AddEditProduct_vue__WEBPACK_IMPORTED_MODULE_1__.default,
+    name: 'venderProduct'
   }]
 });
 
@@ -54636,7 +54677,28 @@ var render = function() {
                         )
                       ]),
                       _vm._v(" "),
-                      _vm._m(8)
+                      _c(
+                        "div",
+                        {
+                          staticClass: "col-md-12 text-right",
+                          staticStyle: { "margin-bottom": "10px" }
+                        },
+                        [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "btn btn-sm btn-danger",
+                              attrs: { href: "/vender/product" }
+                            },
+                            [_vm._v("Cancel")]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            staticClass: "btn btn-sm btn-info",
+                            attrs: { type: "submit", value: "Submit" }
+                          })
+                        ]
+                      )
                     ])
                   ]
                 )
@@ -54720,28 +54782,6 @@ var staticRenderFns = [
       _vm._v("Categories "),
       _c("span", { staticClass: "text-danger" }, [_vm._v("*")])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "col-md-12 text-right",
-        staticStyle: { "margin-bottom": "10px" }
-      },
-      [
-        _c("a", { staticClass: "btn btn-sm btn-danger", attrs: { href: "" } }, [
-          _vm._v("Cancel")
-        ]),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "btn btn-sm btn-info",
-          attrs: { type: "submit", value: "Submit" }
-        })
-      ]
-    )
   }
 ]
 render._withStripped = true
@@ -54766,104 +54806,160 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c(
-      "div",
-      { staticClass: "row" },
-      [
-        _c("VenderSidbar"),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-12" }, [
-          _c(
-            "div",
-            {
-              staticClass: "container-fluid",
-              staticStyle: { background: "white", "padding-top": "10px" }
-            },
-            [
-              _c("div", { staticClass: "row" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "col-md-12 text-right",
-                    staticStyle: { "margin-bottom": "10px" }
-                  },
-                  [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "btn btn-sm btn-info",
-                        attrs: { href: "/vender/product/add" }
-                      },
-                      [_vm._v("Add New")]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-12 overflow-auto" }, [
-                  _c("table", { staticClass: "table" }, [
-                    _vm._m(0),
-                    _vm._v(" "),
-                    _c(
-                      "tbody",
-                      _vm._l(_vm.data.data, function(item, idx) {
-                        return _c("tr", { key: idx }, [
-                          _c("th", [_vm._v(_vm._s(idx + 1))]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(item.name))]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(item.qty))]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(item.price_in))]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(item.price_out))]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(item.categories_id))]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(item.product_expire_date))]),
-                          _vm._v(" "),
-                          _c(
-                            "td",
-                            { staticClass: "text-center" },
-                            [
+  return _c(
+    "div",
+    { staticClass: "container", staticStyle: { "margin-bottom": "10px" } },
+    [
+      _c(
+        "div",
+        { staticClass: "row" },
+        [
+          _c("VenderSidbar"),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-12" }, [
+            _c(
+              "div",
+              {
+                staticClass: "container-fluid",
+                staticStyle: { background: "white", "padding-top": "10px" }
+              },
+              [
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col-md-12 text-right",
+                      staticStyle: { "margin-bottom": "10px" }
+                    },
+                    [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "btn btn-sm btn-info",
+                          attrs: { href: "/vender/product/add" }
+                        },
+                        [_vm._v("Add New")]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-12 overflow-auto" }, [
+                    _c("table", { staticClass: "table" }, [
+                      _vm._m(0),
+                      _vm._v(" "),
+                      _c(
+                        "tbody",
+                        _vm._l(_vm.data.data, function(item, idx) {
+                          return _c("tr", { key: idx }, [
+                            _c("th", [_vm._v(_vm._s(idx + 1))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(item.name))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(item.qty))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(item.price_in))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(item.price_out))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(item.categories_id))]),
+                            _vm._v(" "),
+                            _c("td", [
+                              _vm._v(_vm._s(item.product_expire_date))
+                            ]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "text-center" }, [
                               _c(
-                                "router-link",
+                                "a",
                                 {
+                                  staticClass: "text-sm text-info",
                                   attrs: {
-                                    to: {
-                                      path: "/vender/product/edit",
-                                      params: 1
-                                    }
+                                    href: "/vender/product/add/" + item.id
                                   }
                                 },
                                 [_vm._v("Edit")]
                               ),
-                              _vm._v(" "),
+                              _vm._v(
+                                "/\n                                        "
+                              ),
                               _c(
                                 "a",
                                 {
                                   staticClass: "text-sm text-danger",
-                                  attrs: { href: "" }
+                                  attrs: { href: "javascript:;" },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.Destroy(item.id)
+                                    }
+                                  }
                                 },
                                 [_vm._v("Delete")]
                               )
-                            ],
-                            1
-                          )
-                        ])
-                      }),
-                      0
-                    )
-                  ])
+                            ])
+                          ])
+                        }),
+                        0
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col-md-12 text-right",
+                      staticStyle: { "margin-top": "10px" }
+                    },
+                    [
+                      _c("div", [
+                        _c(
+                          "nav",
+                          {
+                            attrs: { "aria-label": "Page navigation example" }
+                          },
+                          [
+                            _c(
+                              "ul",
+                              { staticClass: "pagination" },
+                              _vm._l(_vm.data.links, function(item, idx) {
+                                return _c(
+                                  "li",
+                                  {
+                                    key: idx,
+                                    class: {
+                                      "page-item": true,
+                                      active: item.active
+                                    }
+                                  },
+                                  [
+                                    _c("a", {
+                                      staticClass: "page-link",
+                                      domProps: {
+                                        innerHTML: _vm._s(item.label)
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          return _vm.index(item.url)
+                                        }
+                                      }
+                                    })
+                                  ]
+                                )
+                              }),
+                              0
+                            )
+                          ]
+                        )
+                      ])
+                    ]
+                  )
                 ])
-              ])
-            ]
-          )
-        ])
-      ],
-      1
-    )
-  ])
+              ]
+            )
+          ])
+        ],
+        1
+      )
+    ]
+  )
 }
 var staticRenderFns = [
   function() {

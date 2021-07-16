@@ -46,14 +46,13 @@
                                 </select>
                             </div>
                             <div class="col-md-12 text-right" style="margin-bottom:10px">
-                                <a href="" class="btn btn-sm btn-danger">Cancel</a>
+                                <a :href="'/vender/product'" class="btn btn-sm btn-danger">Cancel</a>
                                 <input type="submit" value="Submit" class="btn btn-sm btn-info">
                             </div>
                             
                         </div>
                     </form>
                 </div>
-                
             </div>
         </div>
     </div>

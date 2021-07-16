@@ -4,6 +4,6 @@ export default{
     router:[
         {path:"/vender/product",component:View,name:'venderProduct'},
         {path:"/vender/product/add",component:AddEditProduct,name:'venderProduct',props:true},
-        {path:"/vender/product/edit/:id?",component:AddEditProduct},
+        {path:"/vender/product/edit/:id?",component:AddEditProduct,name:'venderProduct'},
     ]
 }

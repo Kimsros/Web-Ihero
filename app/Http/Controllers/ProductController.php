@@ -137,10 +137,10 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
         try{
-            if(Product::find($product['id'])->delete()){
+            if(Product::find($id)->delete()){
                 return response()->json(['success'=>'Product is deleted !!']);
             }else{
                 return response()->json(['success'=>'Product is not deleted !!']);
