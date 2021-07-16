@@ -1,6 +1,6 @@
-import View from "./View/View.vue";
+import View from "./View/view.vue";
 export default{
     router:[
-        {path:"/staff_order",component:View},
+        {path:"/staff/order",component:View,name:'staffOrder'},
     ]
 }

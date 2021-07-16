@@ -14,26 +14,26 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Gender</th>
-                                        <th>Age</th>
-                                        <th>Phone</th>
-                                        <th>Position</th>
+                                        <th>Quantity</th>
+                                        <th>Price In</th>
+                                        <th>Price Out</th>
+                                        <th>Category</th>
+                                        <th>Expire Date</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th>1</th>
-                                        <td>Kimsros</td>
-                                        <td>Kimsros@gmail.com</td>
-                                        <td>Mail</td>
-                                        <td>26</td>
-                                        <td>011206889</td>
-                                        <td>Admin</td>
+                                    <tr v-for="(item,idx) in data.data" :key="idx">
+                                        <th>{{idx+1}}</th>
+                                        <td>{{item.name}}</td>
+                                        <td>{{item.qty}}</td>
+                                        <td>{{item.price_in}}</td>
+                                        <td>{{item.price_out}}</td>
+                                        <td>{{item.categories_id}}</td>
+                                        <td>{{item.product_expire_date}}</td>
                                         <td class="text-center">
-                                            <a href="" class="text-sm text-info">Edit</a>/
-                                            <a href="" class="text-sm text-info">Detail</a>/
+                                            <router-link :to="{path:'/vender/product/edit',params:1}">Edit</router-link>
+                                            <!-- <a :href="'/vender/product/add/'+item.id" class="text-sm text-info">Edit</a>/ -->
                                             <a href="" class="text-sm text-danger">Delete</a>
                                         </td>
                                     </tr>
@@ -48,10 +48,32 @@
     </div>
 </template>
 <script>
+import axios from 'axios';
 import VenderSidbar from "../../include/VenderSidbar.vue";
 export default {
+    data(){
+        return {
+            data:[]
+        }
+    },
     components:{
         VenderSidbar,
+    },
+    mounted(){
+        this.index();
+    },
+    methods:{
+        index(url=null){
+            if(url!=null){
+                axios.get(url).then(respon=>{
+                    this.data=respon.data.success;
+                });
+            }else{
+                axios.get('/api/vender/product').then(respon=>{
+                    this.data=respon.data.success;
+                });
+            } 
+        }
     }
 }
 </script>

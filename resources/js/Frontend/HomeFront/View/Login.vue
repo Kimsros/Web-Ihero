@@ -36,7 +36,7 @@ export default{
             }else if(this.role=='Vender'){
                 window.location.href='/vender';
             }else if(this.role=='Staff'){
-                
+                window.location.href='/staff';
             }else if(this.role=='Delivery'){
 
             }else{

@@ -1,6 +1,6 @@
 import CustomerOrderReport from "./OrderReport/router.js";
-import CustomerProduct from "./Product/router.js";
-const routes=[...CustomerOrderReport.router,...CustomerProduct.router];
+import CustomerDashboard from "./Dashboard/router.js";
+const routes=[...CustomerOrderReport.router,...CustomerDashboard.router];
 export default{
     router:routes
 }
