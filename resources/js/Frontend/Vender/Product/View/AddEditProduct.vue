@@ -73,7 +73,6 @@ export default {
                 product_low_quatity:null,
                 product_expire_date:null,
                 categories_id:null
-
             },
             attribute:[],
             categories:[]
@@ -95,7 +94,22 @@ export default {
         },
         InsertUpdate(){
             if(this.form.id>0){
-                alert('update');
+                axios.post('/api/vender/product/update/'+this.form.id,this.form).then(respon=>{
+                    this.$swal.fire(
+                        {
+                            toast:true,
+                            position:'bottom-end',
+                            title: respon.data.success,
+                            icon: 'success',
+                            showConfirmButton:false,
+                            timer:3000,
+                            titleColor:"#FFF"
+                        }
+                    );
+                    setTimeout(() => {
+                        window.location.href='/vender/product';
+                    }, 300);
+                });
             }else{
                 axios.post('/api/vender/product/add',this.form).then(respon=>{
                     this.$swal.fire(
@@ -115,12 +129,16 @@ export default {
                     
                 });
             }
-        }
+        },
     },
     mounted(){
         this.getCategories();
         this.getAttribute();
-        console.log(this.$route.params.id);
+        if(this.$route.params.id>0){
+            axios.get('/api/vender/product/edit/'+this.$route.params.id).then(respon=>{
+                this.form=respon.data.success;
+            });
+        }
     }  
 }
 </script>

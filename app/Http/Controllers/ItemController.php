@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Item;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ItemController extends Controller
 {
@@ -12,9 +14,26 @@ class ItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        try{
+            try{
+                $vender_id=1;
+                // $sql="select id,name,price,delivery_amount,discount,(select image from item_images where item_id=items.id limit 1) as image from items where vender_id=$vender_id";
+                // $menu=DB::select($sql);
+                if(isset($request->per_page)){
+                    $per_page=$request->per_page;
+                }else{
+                    $per_page=10;
+                }
+                $menu=DB::table('items as i')->join('item_images as ii','i.id','=','ii.item_id')->where('i.vender_id',$vender_id)->select('i.id','i.name','i.price','i.delivery_amount','i.discount','ii.image')->paginate($per_page);
+                return response()->json(['success'=>$menu]);
+            }catch(Exception $e){
+                return response()->json(['error'=>$e->getMessage()]);
+            }
+        }catch(Exception $e){
+            return response()->json(['error'=>$e->getMessage()]);
+        }
     }
 
     /**

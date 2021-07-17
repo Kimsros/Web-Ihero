@@ -33,7 +33,7 @@
                                         <td>{{item.product_expire_date}}</td>
                                         <td class="text-center">
                                             <!-- <router-link :to="{path:'/vender/product/edit',params:1}">Edit</router-link> -->
-                                            <a :href="'/vender/product/add/'+item.id" class="text-sm text-info">Edit</a>/
+                                            <a :href="'/vender/product/edit/'+item.id" class="text-sm text-info">Edit</a>/
                                             <a href="javascript:;" class="text-sm text-danger" @click="Destroy(item.id)">Delete</a>
                                         </td>
                                     </tr>

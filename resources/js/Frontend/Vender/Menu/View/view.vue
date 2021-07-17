@@ -13,32 +13,40 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
+                                        <th>Image</th>
                                         <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Gender</th>
-                                        <th>Age</th>
-                                        <th>Phone</th>
-                                        <th>Position</th>
+                                        <th>Price</th>
+                                        <th>Delivery Amount</th>
+                                        <th>Discount(%)</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th>1</th>
-                                        <td>Kimsros</td>
-                                        <td>Kimsros@gmail.com</td>
-                                        <td>Mail</td>
-                                        <td>26</td>
-                                        <td>011206889</td>
-                                        <td>Admin</td>
+                                    <tr v-for="(item,idx) in data.data" :key="idx">
+                                        <th>{{idx+1}}</th>
+                                        <td>Image</td>
+                                        <td>{{item.name}}</td>
+                                        <td>{{item.price}}</td>
+                                        <td>{{item.delivery_amount}}</td>
+                                        <td>{{item.discount}}</td>
                                         <td class="text-center">
                                             <a href="" class="text-sm text-info">Edit</a>/
                                             <a href="" class="text-sm text-info">Detail</a>/
-                                            <a href="" class="text-sm text-danger">Delete</a>
+                                            <a href="javascript:;" class="text-sm text-danger">Delete</a>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+                        <div style="margin-top:10px" class="col-md-12 text-right">
+                            <div>
+                                <nav aria-label="Page navigation example">
+                                <ul class="pagination">
+                                <li  v-for="(item,idx) in data.links" :key="idx" v-bind:class="{'page-item':true,'active':item.active }"><a class="page-link" @click="index(item.url)" v-html="item.label"></a></li>
+
+                                </ul>
+                            </nav>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -48,10 +56,33 @@
     </div>
 </template>
 <script>
+import axios from 'axios';
 import VenderSidbar from "../../include/VenderSidbar.vue";
 export default {
+    data(){
+        return {
+            data:[]
+        }
+    },
     components:{
         VenderSidbar,
+    },
+    methods:{
+        index(url=null){
+            if(null==null){
+                axios.get('/api/vender/menu').then(respon=>{
+                    this.data=respon.data.success;
+                });
+            }else{
+                axios.get(url).then(respon=>{
+                    this.data=respon.data.success;
+                });
+            }
+            console.log(this.data);
+        }
+    },
+    mounted(){
+        this.index();
     }
 }
 </script>

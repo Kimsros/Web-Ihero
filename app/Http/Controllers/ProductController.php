@@ -90,9 +90,14 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
-        //
+        try{
+            $vender_id=1;
+            return response()->json(['success'=>Product::where('id',$id)->where('vender_id',$vender_id)->first()]);
+        }catch(Exception $e){
+            return response()->json(['error'=>$e->getMessage()]);
+        }
     }
 
     /**
@@ -102,7 +107,7 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
         try{
             $validation=Validator($request->all(),[
@@ -121,7 +126,7 @@ class ProductController extends Controller
             $data=$request->all();
             $data['vender_id']=1;
             $data['updated_by']=1;
-            if(Product::find($product['id'])->update($data)){
+            if(Product::find($id)->update($data)){
                 return response()->json(['success'=>'Product is updated !!']);
             }else{
                 return response()->json(['error'=>'Product is not updated !!']);
