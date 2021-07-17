@@ -106,7 +106,6 @@
                                                     <img :src="image" alt="">
                                                 </div>
                                             </div>
-                                            
                                         </div>
                                     </div>
                                     <div class="col-md-6">
